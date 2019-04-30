@@ -1,0 +1,74 @@
+[
+  {
+    "id": 8,
+    "name": "IPHONE",
+    "value1": "mat khau",
+    "value2": "IMEI",
+    "value3": null,
+    "value4": null,
+    "paymentTerm": 30,
+    "paymentType": 1,
+    "liquidateAfter": 5,
+    "category": {
+      "id": 3,
+      "categoryName": "Điện Thoại",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/44d27cdb-dien-thoai.png"
+    },
+    "status": 1
+  },
+  {
+    "id": 9,
+    "name": "SAMSUNG",
+    "value1": "mat khau",
+    "value2": "IMEI",
+    "value3": null,
+    "value4": null,
+    "paymentTerm": 30,
+    "paymentType": 1,
+    "liquidateAfter": 5,
+    "category": {
+      "id": 3,
+      "categoryName": "Điện Thoại",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/44d27cdb-dien-thoai.png"
+    },
+    "status": 1
+  },
+  {
+    "id": 10,
+    "name": "MACBOOK",
+    "value1": "mat khau",
+    "value2": "version",
+    "value3": null,
+    "value4": null,
+    "paymentTerm": 1,
+    "paymentType": 2,
+    "liquidateAfter": 5,
+    "category": {
+      "id": 4,
+      "categoryName": "Máy Tính",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/9a2fe623-may-tinh.png"
+    },
+    "status": 1
+  },
+  {
+    "id": 11,
+    "name": "ASUS",
+    "value1": "mat khau",
+    "value2": "version",
+    "value3": null,
+    "value4": null,
+    "paymentTerm": 1,
+    "paymentType": 2,
+    "liquidateAfter": 5,
+    "category": {
+      "id": 4,
+      "categoryName": "Máy Tính",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/9a2fe623-may-tinh.png"
+    },
+    "status": 1
+  }
+]

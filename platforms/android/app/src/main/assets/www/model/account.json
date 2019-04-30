@@ -1,0 +1,38 @@
+{
+  "user": {
+    "id": 7,
+    "role": {
+      "id": 3,
+      "roleName": "ROLE_PAWNER",
+      "description": null
+    },
+    "username": "thinhbvgse61623@fpt.edu.vn",
+    "password": "$2a$10$cwZHESW/mAQVm4P8Fw4JruA6g8BLINcVHRZquUm2ITdsh81P8j9oi",
+    "status": 1,
+    "token": null,
+    "createdTime": "2019-03-08T05:24:17.000+0000"
+  },
+  "shop": {
+    "id": 1,
+    "shopName": "Huy Huy",
+    "phoneNumber": "123456789",
+    "facebook": "https://www.facebook.com/luxifer.bepiglet",
+    "email": "ooluxiferoo",
+    "favoriteCount": 0,
+    "status": 2,
+    "rating": 3,
+    "policy": "5",
+    "accountId": 7,
+    "addressId": 22,
+    "viewCount": 42,
+    "avatarUrl": "https://i.pinimg.com/236x/45/9b/d2/459bd205d0b44d3d3a588e2e6d690947.jpg",
+    "address": {
+      "id": 22,
+      "latitude": "10.849480",
+      "longtitude": "106.636421",
+      "fullAddress": "",
+      "status": 1,
+      "districtId": 2
+    }
+  }
+}

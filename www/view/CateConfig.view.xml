@@ -1,0 +1,101 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:fb="sap.ui.comp.filterbar"
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        controllerName="mortgage.pawnshop.controller.CateConfig">
+    <Page showHeader="false">
+        <!--<Button text="{i18n>btn_register_pawnshop}" press="onRegister"/>-->
+        <PullToRefresh visible="{device>/support/touch}" refresh="onRefresh"/>
+        <l:VerticalLayout width="100%">
+            <fb:FilterBar id="filterBar" header="{i18n>filterBar}" showFilterConfiguration="false"
+                          useToolbar="false" filterBarExpanded="true" showGoOnFB="false"
+                          reset="onReset" search="onSearch"
+                          showRestoreOnFB="true" showClearOnFB="false">
+                <fb:filterItems>
+                    <fb:FilterItem name="STATUS" label="{i18n>status}" labelTooltip="{i18n>filterByStatus}"
+                                   mandatory="false">
+                        <fb:control>
+                            <MultiComboBox
+                                    placeholder="{i18n>filterByStatus}"
+                                    selectionFinish="onFilterByStatus">
+                                <layoutData>
+                                    <ToolbarLayoutData maxWidth="7rem" shrinkable="true" minWidth="5rem"/>
+                                </layoutData>
+                                <items>
+                                    <core:Item key="1" text="{i18n>status_active}"/>
+                                    <core:Item key="2" text="{i18n>status_locked}"/>
+                                </items>
+                            </MultiComboBox>
+                        </fb:control>
+                    </fb:FilterItem>
+                </fb:filterItems>
+            </fb:FilterBar>
+        </l:VerticalLayout>
+        <Table id="tblCateConfig" fixedLayout="false" alternateRowColors="true" inset="{= !${device>/system/phone}}"
+               items="{cateConfig>/}">
+            <headerToolbar>
+
+                <OverflowToolbar>
+                    <Title level="H2" text="{i18n>cate_config}">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="Disappear"/>
+                        </layoutData>
+                    </Title>
+                    <ToolbarSpacer/>
+                    <MultiComboBox showButton="true" width="12rem"
+                                   placeholder="{i18n>filterByStatus}"
+                                   selectionFinish="onFilterByStatus">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="Low"/>
+                        </layoutData>
+                        <items>
+                            <core:Item key="1" text="{i18n>status_active}"/>
+                            <core:Item key="2" text="{i18n>status_locked}"/>
+                        </items>
+                    </MultiComboBox>
+                    <Button icon="sap-icon://add"
+                            text="{= ${device>/system/phone} ? '' : ${i18n>btn_create_cate_config} }"
+                            press="onCreateConfigPressed"/>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Label wrapping="true" wrappingType="Hyphenated" text="{i18n>category_name}"/>
+                </Column>
+                <Column minScreenWidth="Tablet" popinDisplay="Inline" demandPopin="true" popinHAlign="Begin">
+                    <Label text="{i18n>name}"/>
+                </Column>
+                <Column hAlign="Right" minScreenWidth="Tablet" popinDisplay="Inline" demandPopin="true"
+                        popinHAlign="Begin">
+                    <Label text="{i18n>paymentTerm}"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline"
+                        popinHAlign="End">
+                    <Label text="{i18n>paymentType}"/>
+                </Column>
+                <Column>
+                    <Label wrapping="true" textAlign="End" wrappingType="Normal" text="{i18n>liquidateAfter}"/>
+                </Column>
+                <Column>
+                    <Label wrapping="true" wrappingType="Hyphenated" text="{i18n>status}"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem press="onDetailConfigPressed" type="Active">
+                    <cells>
+                        <Title level="H1" text="{cateConfig>category/categoryName}"/>
+                        <Text text="{cateConfig>name}"/>
+                        <Text text="{cateConfig>paymentTerm}"/>
+                        <Text text="{ path: 'cateConfig>paymentType', formatter: '.formatter.paymentType' }"/>
+                        <Text text="{ path:'cateConfig>liquidateAfter', formatter: '.formatter.liquidateAfter'}"/>
+                        <ObjectStatus
+                                text="{= ${cateConfig>status} === 1 ? ${i18n>status_active} : ${i18n>status_locked} }"
+                                state="{= ${cateConfig>status} === 1 ? 'Success' : 'None' }"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

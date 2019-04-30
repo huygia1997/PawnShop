@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" displayBlock="true">
+    <Dialog id="ChangePassDialog" stretch="{device>/system/phone}" title="{i18n>ChangePassDialog_Title}" initialFocus="
+    true"
+            state="{= ${globalProperties>/status} === 'N' ? 'Warning' : 'None'}">
+        <buttons>
+            <Button id="btnOk" text="Ok" press="__submitChangePassword" type="Accept"/>
+            <Button class="closebtn" text="{i18n>cancel}" id="__button2" press="__cancel"/>
+        </buttons>
+        <content>
+            <HBox justifyContent="Center" alignItems="End" height="25px"
+                  visible="{= ${globalProperties>/status} === 'N' }">
+                <items>
+                    <ObjectStatus state="Warning" text="{i18n>msgForceChangePass}"/>
+                </items>
+            </HBox>
+            <sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0">
+                <sap.ui.layout.form:formContainers>
+                    <sap.ui.layout.form:FormContainer>
+                        <sap.ui.layout.form:formElements>
+                            <sap.ui.layout.form:FormElement>
+                                <sap.ui.layout.form:fields>
+                                    <Input id="_txtOldPass" width="100%" type="Password"
+                                           placeholder="{i18n>lblOldPassword}"/>
+                                </sap.ui.layout.form:fields>
+                            </sap.ui.layout.form:FormElement>
+                            <sap.ui.layout.form:FormElement>
+                                <sap.ui.layout.form:fields>
+                                    <Input id="_txtNewPass" width="100%" type="Password"
+                                           placeholder="{i18n>lblNewPassword}"/>
+                                </sap.ui.layout.form:fields>
+                            </sap.ui.layout.form:FormElement>
+                            <sap.ui.layout.form:FormElement>
+                                <sap.ui.layout.form:fields>
+                                    <Input id="_txtConfirmNewPass" width="100%" type="Password"
+                                           placeholder="{i18n>lblConfirmNewPassword}"/>
+                                </sap.ui.layout.form:fields>
+                            </sap.ui.layout.form:FormElement>
+                        </sap.ui.layout.form:formElements>
+                    </sap.ui.layout.form:FormContainer>
+                </sap.ui.layout.form:formContainers>
+                <sap.ui.layout.form:layout>
+                    <sap.ui.layout.form:ResponsiveGridLayout id="__layout0"/>
+                </sap.ui.layout.form:layout>
+            </sap.ui.layout.form:Form>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

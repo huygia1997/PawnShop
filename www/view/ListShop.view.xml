@@ -1,0 +1,27 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns="sap.m" controllerName="mortgage.pawnshop.controller.ListShop">
+	<Page class="sapMShellGlobalOuterBackground" backgroundDesign="Transparent" showNavButton="false" showHeader="false">
+		<content>
+			<VBox height="100%" justifyContent="Center">
+				<HBox width="100%" justifyContent="Center" alignItems="Center" direction="Column">
+					<List id="ShortProductList" headerText="{i18n>title_listShop}" items="{oModelList>/results}" class="customListItem">
+						<CustomListItem press="onSelectShop" type="Navigation">
+							<VBox class="box_shop">
+								<Image src="{oModelList>avatarUrl}" class="listShopItem_image"/>
+								<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+									<HBox>
+										<Label text="{i18n>lb_shopname}" class="lb_listShop"/>
+										<Title text="{oModelList>shopName}" class="listShopItem_title"/>
+									</HBox>
+									<HBox>
+										<Label text="{i18n>lb_address}" class="lb_listShop"/>
+										<Text text="{oModelList>address/fullAddress}" class="listShopItem_address"/>
+									</HBox>
+								</VBox>
+							</VBox>
+						</CustomListItem>
+					</List>
+				</HBox>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

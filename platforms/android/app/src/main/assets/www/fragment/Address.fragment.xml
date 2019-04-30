@@ -1,0 +1,69 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" displayBlock="true">
+    <Dialog contentWidth="400px" stretch="{device>/system/phone}" title="{i18n>TT_ADDRESS_FRAGMENT}">
+        <buttons>
+            <Button text="{i18n>cancel}" press="__addAddrCancel" type="Reject"/>
+            <Button enabled="{= ${address>/stateId} &amp;&amp; ${address>/address3} &amp;&amp; ${address>/address2} &amp;&amp; ${address>/address1} ? true : false }"
+                    id="btnOk1" text="Ok"
+                    press="_doConcatenateAddress" type="Accept"/>
+        </buttons>
+        <content>
+            <sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form01">
+                <sap.ui.layout.form:formContainers>
+                    <sap.ui.layout.form:FormContainer>
+                        <sap.ui.layout.form:formElements>
+                            <sap.ui.layout.form:FormElement>
+                                <sap.ui.layout.form:fields>
+                                    <ComboBox id="_selectCity"
+                                              placeholder="{i18n>LBL_INPUT_CITY}"
+                                              valueState="{= ${address>/stateId} ? 'None' : 'Warning' }"
+                                              valueStateText="{= ${address>/stateId} ? '' : ${i18n>Invalid_City} }"
+                                              forceSelection="true"
+                                              selectedKey="{address>/stateId}"
+                                              items="{/CitySet}"
+                                              selectionChange="onCityChange">
+                                        <items>
+                                            <core:Item key="{Ztinh}" text="{Zdesc}"/>
+                                        </items>
+                                    </ComboBox>
+                                    <ComboBox id="_selectDistrict"
+                                              placeholder="{i18n>LBL_INPUT_DISTRICT}"
+                                              valueState="{= ${address>/address3} ? 'None' : 'Warning' }"
+                                              valueStateText="{= ${address>/address3} ? '' : ${i18n>Invalid_District} }"
+                                              forceSelection="false"
+                                              selectedKey="{address>/address3}"
+                                              items="{path: '/DistrictSet', sorter: { path: 'Zdesc', ascending : true} }"
+                                              selectionChange="onDistrictChange">
+                                        <items>
+                                            <core:Item key="{Zquan}" text="{Zdesc}"/>
+                                        </items>
+                                    </ComboBox>
+                                    <ComboBox id="_selectWard"
+                                              placeholder="{i18n>LBL_INPUT_WARD}"
+                                              valueState="{= ${address>/address2} ? 'None' : 'Warning' }"
+                                              valueStateText="{= ${address>/address2} ? '' : ${i18n>Invalid_Ward} }"
+                                              forceSelection="false"
+                                              items="{/WardsSet}"
+                                              selectedKey="{address>/address2}"
+                                              selectionChange="onWardChange">
+                                        <items>
+                                            <core:Item key="{Zphuong}" text="{Zdesc}"/>
+                                        </items>
+                                    </ComboBox>
+                                    <Input id="_inpStreet" value="{address>/address1}"
+                                           valueLiveUpdate="true"
+                                           maxLength="60"
+                                           valueState="{= ${address>/address1} ? 'None' : 'Warning' }"
+                                           valueStateText="{= ${address>/address1} ? '' : ${i18n>Invalid_Address} }"
+                                           placeholder="{i18n>LBL_INPUT_STREET}"/>
+                                </sap.ui.layout.form:fields>
+                            </sap.ui.layout.form:FormElement>
+                        </sap.ui.layout.form:formElements>
+                    </sap.ui.layout.form:FormContainer>
+                </sap.ui.layout.form:formContainers>
+                <sap.ui.layout.form:layout>
+                    <sap.ui.layout.form:ResponsiveGridLayout id="__layout01"/>
+                </sap.ui.layout.form:layout>
+            </sap.ui.layout.form:Form>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

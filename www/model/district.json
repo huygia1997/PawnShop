@@ -1,0 +1,308 @@
+[
+  {
+    "id": 2,
+    "districtName": "Thủ Dầu Một",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 3,
+    "districtName": "Bàu Bàng",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 4,
+    "districtName": "Dầu Tiếng",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 5,
+    "districtName": "Thị xã Bến Cát",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 6,
+    "districtName": "Phú Giáo",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 7,
+    "districtName": "Thị xã Tân Uyên",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 8,
+    "districtName": "Thị xã Dĩ An",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 9,
+    "districtName": "Thị xã Thuận An",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 10,
+    "districtName": "Bắc Tân Uyên",
+    "description": null,
+    "cityId": 1
+  },
+  {
+    "id": 11,
+    "districtName": "Biên Hòa",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 12,
+    "districtName": "Thị xã Long Khánh",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 13,
+    "districtName": "Tân Phú",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 14,
+    "districtName": "Vĩnh Cửu",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 15,
+    "districtName": "Định Quán",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 16,
+    "districtName": "Trảng Bom",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 17,
+    "districtName": "Thống Nhất",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 18,
+    "districtName": "Cẩm Mỹ",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 19,
+    "districtName": "Long Thành",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 20,
+    "districtName": "Xuân Lộc",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 21,
+    "districtName": "Nhơn Trạch",
+    "description": null,
+    "cityId": 2
+  },
+  {
+    "id": 22,
+    "districtName": "Quận 1",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 23,
+    "districtName": "Quận 12",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 24,
+    "districtName": "Quận Thủ Đức",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 25,
+    "districtName": "Quận 9",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 26,
+    "districtName": "Quận Gò Vấp",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 27,
+    "districtName": "Quận Bình Thạnh",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 28,
+    "districtName": "Quận Tân Bình",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 29,
+    "districtName": "Quận Tân Phú",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 30,
+    "districtName": "Quận Phú Nhuận",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 31,
+    "districtName": "Quận 2",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 32,
+    "districtName": "Quận 3",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 33,
+    "districtName": "Quận 10",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 34,
+    "districtName": "Quận 11",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 35,
+    "districtName": "Quận 4",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 36,
+    "districtName": "Quận 5",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 37,
+    "districtName": "Quận 6",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 38,
+    "districtName": "Quận 8",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 39,
+    "districtName": "Quận Bình Tân",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 40,
+    "districtName": "Quận 7",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 41,
+    "districtName": "Củ Chi",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 42,
+    "districtName": "Hóc Môn",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 43,
+    "districtName": "Quận Bình Chánh",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 44,
+    "districtName": "Nhà Bè",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 45,
+    "districtName": "Cần Giờ",
+    "description": null,
+    "cityId": 3
+  },
+  {
+    "id": 46,
+    "districtName": "Vũng Tàu",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 47,
+    "districtName": "Bà Rịa",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 48,
+    "districtName": "Châu Đức",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 49,
+    "districtName": "Xuyên Mộc",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 50,
+    "districtName": "Long Điền",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 51,
+    "districtName": "Đất Đỏ",
+    "description": null,
+    "cityId": 4
+  },
+  {
+    "id": 52,
+    "districtName": "Tân Thành",
+    "description": null,
+    "cityId": 4
+  }
+]

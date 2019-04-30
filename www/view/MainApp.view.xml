@@ -1,0 +1,115 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns="sap.m"
+          controllerName="mortgage.pawnshop.controller.MainApp">
+    <tnt:ToolPage class="transparent_background" id="_pageCustomer">
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Button press="showMenu" type="Transparent" icon="sap-icon://menu2">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                    </layoutData>
+                </Button>
+                <ToolbarSpacer/>
+                <Title id="_titleMain" text="{globalProperties>/appTitle}" wrapping="false">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="Disappear"/>
+                    </layoutData>
+                </Title>
+                <!--<ToolbarSpacer/>-->
+                <!--<Button press="__toViewCart"-->
+                <!--text="{CartProperties>/TotalQuantity}"-->
+                <!--type="Transparent"-->
+                <!--icon="sap-icon://cart-3">-->
+                <!--<layoutData>-->
+                <!--<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+                <!--</layoutData>-->
+                <!--</Button>-->
+                <Button
+                        icon="sap-icon://message-popup"
+                        type="{= ${noti>/}.length > 0 ? 'Emphasized' : 'Transparent' }"
+                        text="{= ${noti>/}.length > 0 ? ${i18n>msgNewNoti} : '' }"
+                        press="onMessagePopoverPress"
+                        tooltip="{i18n>errorButtonTooltip}">
+                    <layoutData>
+                        <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+                    </layoutData>
+                </Button>
+                <!--<Button text="DEMO: Send Notifications"-->
+                <!--        type="Transparent"-->
+                <!--        press="onSendNoti"-->
+                <!--        tooltip="{i18n>errorButtonTooltip}">-->
+                <!--    <layoutData>-->
+                <!--        <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>-->
+                <!--    </layoutData>-->
+                <!--</Button>-->
+                <ResponsivePopover modal="false" showHeader="false" id="notiList" placement="VerticalPreferedBottom">
+                    <beginButton>
+                        <Button visible="{device>/system/phone}" type="Transparent" text="{i18n>close}"
+                                press="onDialogClose"/>
+                    </beginButton>
+                    <content>
+                        <List items="{noti>/}"
+                              noDataText="{i18n>msgNoNewNoti}">
+                            <items>
+                                <NotificationListItem press="onPressNotiDetail" title="{noti>objectId}" authorName="{noti>dateCreate}"
+                                                      description="{noti>message}"/>
+                            </items>
+                        </List>
+                    </content>
+                </ResponsivePopover>
+            </tnt:ToolHeader>
+        </tnt:header>
+        <tnt:sideContent>
+            <tnt:SideNavigation expanded="true" id="sideNavigation">
+                <tnt:item>
+                    <tnt:NavigationList>
+                    	<tnt:NavigationListItem
+                                icon="sap-icon://retail-store"
+                                select="navToListShop"
+                                text="{i18n>navListShop}"/>
+                        <tnt:NavigationListItem
+                                icon="sap-icon://home"
+                                select="navToDashboard"
+                                text="{i18n>navDashboard}"/>
+                        <tnt:NavigationListItem
+                                icon="sap-icon://loan"
+                                id="navToHome"
+                                select="navToTransaction"
+                                text="{i18n>navTransaction}"/>
+                        <tnt:NavigationListItem
+                                expanded="false"
+                                icon="sap-icon://action-settings"
+                                text="{i18n>navConfig}">
+                            <tnt:items>
+                                <tnt:NavigationListItem
+                                        select="navCateConfig"
+                                        text="{i18n>navCateConfig}"/>
+                                <tnt:NavigationListItem
+                                        select="navShopConfig"
+                                        text="{i18n>navShopConfig}"/>
+                            </tnt:items>
+                        </tnt:NavigationListItem>
+                        <tnt:NavigationListItem
+                                icon="sap-icon://product"
+                                id="navSaleIncomeMaster"
+                                select="navSales"
+                                text="{i18n>navSales}"/>
+                    </tnt:NavigationList>
+                </tnt:item>
+
+                <tnt:fixedItem>
+                    <tnt:NavigationList>
+                        <tnt:NavigationListItem select="" enabled="false"
+                                                text="{account>/shop/shopName}"
+                                                icon="sap-icon://employee"/>
+                        <tnt:NavigationListItem select="logout"
+                                                text="{i18n>logout}"
+                                                icon="sap-icon://log"/>
+                    </tnt:NavigationList>
+                </tnt:fixedItem>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <App id="mainApp"/>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>

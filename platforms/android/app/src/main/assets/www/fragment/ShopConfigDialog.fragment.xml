@@ -1,0 +1,152 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m"
+                         displayBlock="true">
+    <Dialog showHeader="false" contentWidth="25rem"
+            stretch="{device>/system/phone}">
+        <!--<Toolbar visible="{= ${currentConfig>/isUpdate} ? true : false }">-->
+        <!--<content>-->
+        <!--<Title visible="{currentConfig>/isUpdate}"-->
+        <!--text="{i18n>UPDATE_SHOP_CONFIG}"/>-->
+        <!--<ToolbarSpacer/>-->
+
+        <!--</content>-->
+        <!--</Toolbar>-->
+        <customHeader>
+            <Toolbar>
+                <content>
+                    <Title visible="{= ${currentConfig>/isUpdate} }"
+                           class="sapUiTinyMarginBegin"
+                           text="{i18n>UPDATE_SHOP_CONFIG}"/>
+                    <ToolbarSpacer/>
+                    <Title visible="{= !${currentConfig>/isUpdate} }" text="{i18n>ADD_SHOP_CONFIG}"/>
+                    <!--<Title visible="{= ${currentConfig>/isUpdate}  }"-->
+                    <!--text="{i18n>UPDATE_SHOP_CONFIG}"/>-->
+                    <ToolbarSpacer/>
+
+                    <Button text="{= ${currentConfig>/status} === 1 ? ${i18n>setCateConfigAsInactive} : ${i18n>setCateConfigAsActive} }"
+                            icon="{= ${currentConfig>/status} === 1 ? 'sap-icon://locked' : 'sap-icon://unlocked' }"
+                            visible="{currentConfig>/isUpdate}" press="onChangeStatusCateConfig"
+                            type="{= ${currentConfig>/status} === 1 ? 'Reject' : 'Emphasized' }"/>
+
+                </content>
+            </Toolbar>
+        </customHeader>
+        <buttons>
+            <Button text="{= ${device>/system/phone} ? '' : ${i18n>update} }"
+                    icon="sap-icon://save"
+                    visible="{= ${currentConfig>/isUpdate}  }"
+                    press="onSubmitCateConfig"
+                    type="Accept"/>
+            <Button visible="{= ${currentConfig>/isUpdate} ? false : true }" text="{i18n>add}"
+                    icon="sap-icon://save"
+                    press="onSubmitCateConfig"
+                    type="Accept"/>
+            <Button text="{i18n>BTN_CLOSE}" press="onDialogClose" type="Transparent"/>
+        </buttons>
+        <content>
+            <ScrollContainer
+                    vertical="true"
+                    height="100%">
+                <content>
+                    <f:Form>
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                    adjustLabelSpan="false"
+                                    emptySpanXL="1"
+                                    emptySpanL="1"
+                                    emptySpanM="1"
+                                    emptySpanS="0"
+                                    columnsXL="1"
+                                    columnsL="1"
+                                    columnsM="1"
+                                    columnsS="1"
+                                    singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="{i18n>category_name}">
+                                        <f:fields>
+                                            <Select enabled="{= !${currentConfig>/isUpdate} }"
+                                                    selectedKey="{currentConfig>/cateId}" items="{category>/}">
+                                                <items>
+                                                    <core:Item key="{category>id}" text="{category>categoryName}"/>
+                                                </items>
+                                            </Select>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="{i18n>name}">
+                                        <f:fields>
+                                            <Input value="{currentConfig>/name}"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="{i18n>PERIOD}">
+                                        <f:fields>
+                                            <Input value="{path: 'currentConfig>/paymentTerm',
+                                                           type: 'sap.ui.model.type.Integer' }"
+                                                   textAlign="End" type="Number">
+                                                <layoutData>
+                                                    <l:GridData span="XL3 L3 M3 S6"/>
+                                                </layoutData>
+                                            </Input>
+                                            <ComboBox selectedKey="{ path: 'currentConfig>/paymentType',
+                                                                     type: 'sap.ui.model.type.Integer' }">
+                                                <layoutData>
+                                                    <l:GridData span="XL5 L3 M5 S6"/>
+                                                </layoutData>
+                                                <items>
+                                                    <core:Item key="1" text="{i18n>PERIOD_UNIT_DATE}"/>
+                                                    <core:Item key="3" text="{i18n>PERIOD_UNIT_MONTH}"/>
+                                                    <core:Item key="2" text="{i18n>PERIOD_UNIT_WEEK}"/>
+                                                </items>
+                                            </ComboBox>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="{i18n>liquidateAfter}">
+                                        <f:fields>
+                                            <Input fieldWidth="60%" description="{i18n>overdue_days}"
+                                                   value="{path: 'currentConfig>/liquidateAfter',
+                                                           type: 'sap.ui.model.type.Integer'}"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="{i18n>ATTRIBUTES}">
+                                        <f:fields>
+                                            <Input
+                                                    placeholder="{i18n>ATTRIBUTE1_NAME}"
+
+                                                    value="{currentConfig>/value1}">
+                                                <layoutData>
+                                                    <l:GridData span="XL3 L3 M3 S6"/>
+                                                </layoutData>
+                                            </Input>
+                                            <Input
+                                                    placeholder="{i18n>ATTRIBUTE2_NAME}"
+                                                    value="{currentConfig>/value2}">
+                                                <layoutData>
+                                                    <l:GridData span="XL3 L3 M3 S6"/>
+                                                </layoutData>
+                                            </Input>
+                                            <Input
+                                                    placeholder="{i18n>ATTRIBUTE3_NAME}"
+                                                    value="{currentConfig>/value3}">
+                                                <layoutData>
+                                                    <l:GridData span="XL3 L3 M3 S6"/>
+                                                </layoutData>
+                                            </Input>
+                                            <Input
+                                                    placeholder="{i18n>ATTRIBUTE4_NAME}"
+                                                    value="{currentConfig>/value4}">
+                                                <layoutData>
+                                                    <l:GridData span="XL3 L3 M3 S6"/>
+                                                </layoutData>
+                                            </Input>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </content>
+            </ScrollContainer>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

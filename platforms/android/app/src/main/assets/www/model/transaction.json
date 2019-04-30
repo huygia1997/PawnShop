@@ -1,0 +1,202 @@
+[
+  {
+    "id": 30,
+    "startDate": "2019-03-20T04:31:27.000+0000",
+    "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+    "price": 500,
+    "status": 1,
+    "pawnerId": 4,
+    "shopId": 1,
+    "paymentTerm": 7,
+    "paymentType": 3,
+    "liquidateAfter": 5,
+    "categoryItemId": 1,
+    "itemName": "Hondahuy2",
+    "pawneeInfoId": 25,
+    "category": {
+      "id": 1,
+      "categoryName": "Trang Sức",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+    },
+    "pawneeInfo": {
+      "id": 25,
+      "name": "one time pawnee",
+      "email": "ooluxiferoo",
+      "phoneNumber": "123123123",
+      "identityNumber": "31432",
+      "address": "1"
+    }
+  },
+  {
+    "id": 30,
+    "startDate": "2019-03-20T04:31:27.000+0000",
+    "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+    "price": 500,
+    "status": 1,
+    "pawnerId": 4,
+    "shopId": 1,
+    "paymentTerm": 7,
+    "paymentType": 3,
+    "liquidateAfter": 5,
+    "categoryItemId": 1,
+    "itemName": "Hondahuy2",
+    "pawneeInfoId": 25,
+    "category": {
+      "id": 1,
+      "categoryName": "Trang Sức",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+    },
+    "pawneeInfo": {
+      "id": 25,
+      "name": "one time pawnee",
+      "email": "ooluxiferoo",
+      "phoneNumber": "123123123",
+      "identityNumber": "31432",
+      "address": "1"
+    }
+  },
+  {
+    "id": 30,
+    "startDate": "2019-03-20T04:31:27.000+0000",
+    "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+    "price": 500,
+    "status": 1,
+    "pawnerId": 4,
+    "shopId": 1,
+    "paymentTerm": 7,
+    "paymentType": 3,
+    "liquidateAfter": 5,
+    "categoryItemId": 1,
+    "itemName": "Hondahuy2",
+    "pawneeInfoId": 25,
+    "category": {
+      "id": 1,
+      "categoryName": "Trang Sức",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+    },
+    "pawneeInfo": {
+      "id": 25,
+      "name": "one time pawnee",
+      "email": "ooluxiferoo",
+      "phoneNumber": "123123123",
+      "identityNumber": "31432",
+      "address": "1"
+    }
+  },
+  {
+    "id": 30,
+    "startDate": "2019-03-20T04:31:27.000+0000",
+    "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+    "price": 500,
+    "status": 1,
+    "pawnerId": 4,
+    "shopId": 1,
+    "paymentTerm": 7,
+    "paymentType": 3,
+    "liquidateAfter": 5,
+    "categoryItemId": 1,
+    "itemName": "Hondahuy2",
+    "pawneeInfoId": 25,
+    "category": {
+      "id": 1,
+      "categoryName": "Trang Sức",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+    },
+    "pawneeInfo": {
+      "id": 25,
+      "name": "one time pawnee",
+      "email": "ooluxiferoo",
+      "phoneNumber": "123123123",
+      "identityNumber": "31432",
+      "address": "1"
+    }
+  },  {
+  "id": 30,
+  "startDate": "2019-03-20T04:31:27.000+0000",
+  "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+  "price": 500,
+  "status": 1,
+  "pawnerId": 4,
+  "shopId": 1,
+  "paymentTerm": 7,
+  "paymentType": 3,
+  "liquidateAfter": 5,
+  "categoryItemId": 1,
+  "itemName": "Hondahuy2",
+  "pawneeInfoId": 25,
+  "category": {
+    "id": 1,
+    "categoryName": "Trang Sức",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+  },
+  "pawneeInfo": {
+    "id": 25,
+    "name": "one time pawnee",
+    "email": "ooluxiferoo",
+    "phoneNumber": "123123123",
+    "identityNumber": "31432",
+    "address": "1"
+  }
+},  {
+  "id": 30,
+  "startDate": "2019-03-20T04:31:27.000+0000",
+  "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+  "price": 500,
+  "status": 1,
+  "pawnerId": 4,
+  "shopId": 1,
+  "paymentTerm": 7,
+  "paymentType": 3,
+  "liquidateAfter": 5,
+  "categoryItemId": 1,
+  "itemName": "Hondahuy2",
+  "pawneeInfoId": 25,
+  "category": {
+    "id": 1,
+    "categoryName": "Trang Sức",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+  },
+  "pawneeInfo": {
+    "id": 25,
+    "name": "one time pawnee",
+    "email": "ooluxiferoo",
+    "phoneNumber": "123123123",
+    "identityNumber": "31432",
+    "address": "1"
+  }
+},  {
+  "id": 30,
+  "startDate": "2019-03-20T04:31:27.000+0000",
+  "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+  "price": 500,
+  "status": 1,
+  "pawnerId": 4,
+  "shopId": 1,
+  "paymentTerm": 7,
+  "paymentType": 3,
+  "liquidateAfter": 5,
+  "categoryItemId": 1,
+  "itemName": "Hondahuy2",
+  "pawneeInfoId": 25,
+  "category": {
+    "id": 1,
+    "categoryName": "Trang Sức",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+  },
+  "pawneeInfo": {
+    "id": 25,
+    "name": "one time pawnee",
+    "email": "ooluxiferoo",
+    "phoneNumber": "123123123",
+    "identityNumber": "31432",
+    "address": "1"
+  }
+}
+]

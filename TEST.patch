@@ -1,0 +1,321 @@
+Index: www/controller/CreateSalesItem.controller.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/controller/CreateSalesItem.controller.js	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/controller/CreateSalesItem.controller.js	(date 1554700005738)
+@@ -205,7 +205,7 @@
+             }
+             submitData.pictures = JSON.stringify(submitData.picturesObj);
+             // Set Item's Category Id
+-            submitData.categoryId = this.byId("selectCate").getSelectedItem().getBindingContext("cateConfig").getProperty("category/id");
++            submitData.categoryId = this.byId("selectCate").getSelectedItem().getBindingContext("category").getProperty("id");
+             // Set Posting date
+             var date = new Date();
+             date.setHours(7);
+Index: www/fragment/ShopConfigDialog.fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/fragment/ShopConfigDialog.fragment.xml	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/fragment/ShopConfigDialog.fragment.xml	(date 1554699711256)
+@@ -4,14 +4,21 @@
+             stretch="{device>/system/phone}">
+         <customHeader>
+             <Bar>
++                <contentLeft>
++
++                </contentLeft>
+                 <contentMiddle>
+                     <Title text="{= ${currentConfig>/isUpdate} ? ${i18n>UPDATE_SHOP_CONFIG} : ${i18n>ADD_SHOP_CONFIG} }"/>
+                 </contentMiddle>
+             </Bar>
+         </customHeader>
+         <buttons>
+-            <Button text="{= ${currentConfig>/isUpdate} ? ${i18n>update} : ${i18n>add}}" press="onCateConfigUpdate"
++            <Button text="{= ${currentConfig>/status} === 1 ? ${i18n>setCateConfigAsInactive} : ${i18n>setCateConfigAsActive} }"
++                    visible="{currentConfig>/isUpdate}" press="onChangeStatusCateConfig"
++                    type="{= ${currentConfig>/status} === 1 ? 'Reject' : 'Emphasized' }"/>
++            <Button text="{= ${currentConfig>/isUpdate} ? ${i18n>update} : ${i18n>add}}" press="onSubmitCateConfig"
+                     type="Accept"/>
++
+             <Button text="{i18n>BTN_CLOSE}" press="onDialogClose" type="Transparent"/>
+         </buttons>
+         <content>
+@@ -38,7 +45,8 @@
+                                 <f:formElements>
+                                     <f:FormElement label="{i18n>category_name}">
+                                         <f:fields>
+-                                            <Select selectedKey="{currentConfig>/cateId}" items="{category>/}">
++                                            <Select enabled="{= !${currentConfig>/isUpdate} }"
++                                                    selectedKey="{currentConfig>/cateId}" items="{category>/}">
+                                                 <items>
+                                                     <core:Item key="{category>id}" text="{category>categoryName}"/>
+                                                 </items>
+@@ -52,12 +60,15 @@
+                                     </f:FormElement>
+                                     <f:FormElement label="{i18n>PERIOD}">
+                                         <f:fields>
+-                                            <Input value="{currentConfig>/paymentTerm}" textAlign="End" type="Number">
++                                            <Input value="{path: 'currentConfig>/paymentTerm',
++                                                           type: 'sap.ui.model.type.Integer' }"
++                                                   textAlign="End" type="Number">
+                                                 <layoutData>
+                                                     <l:GridData span="XL3 L3 M3 S6"/>
+                                                 </layoutData>
+                                             </Input>
+-                                            <ComboBox selectedKey="{currentConfig>/paymentType}">
++                                            <ComboBox selectedKey="{ path: 'currentConfig>/paymentType',
++                                                                     type: 'sap.ui.model.type.Integer' }">
+                                                 <layoutData>
+                                                     <l:GridData span="XL5 L3 M5 S6"/>
+                                                 </layoutData>
+@@ -72,36 +83,37 @@
+                                     <f:FormElement label="{i18n>liquidateAfter}">
+                                         <f:fields>
+                                             <Input fieldWidth="60%" description="{i18n>overdue_days}"
+-                                                   value="{currentConfig>/liquidateAfter}"/>
++                                                   value="{path: 'currentConfig>/liquidateAfter',
++                                                           type: 'sap.ui.model.type.Integer'}"/>
+                                         </f:fields>
+                                     </f:FormElement>
+                                     <f:FormElement label="{i18n>ATTRIBUTES}">
+                                         <f:fields>
+-                                            <Input editable="{= !${currentConfig>/isUpdate}}"
+-                                                   placeholder="{i18n>ATTRIBUTE1_NAME}"
++                                            <Input
++                                                    placeholder="{i18n>ATTRIBUTE1_NAME}"
+ 
+-                                                   value="{currentConfig>/attribute1}">
++                                                    value="{currentConfig>/value1}">
+                                                 <layoutData>
+                                                     <l:GridData span="XL3 L3 M3 S6"/>
+                                                 </layoutData>
+                                             </Input>
+-                                            <Input editable="{= !${currentConfig>/isUpdate}}"
+-                                                   placeholder="{i18n>ATTRIBUTE2_NAME}"
+-                                                   value="{currentConfig>/attribute2}">
++                                            <Input
++                                                    placeholder="{i18n>ATTRIBUTE2_NAME}"
++                                                    value="{currentConfig>/value2}">
+                                                 <layoutData>
+                                                     <l:GridData span="XL3 L3 M3 S6"/>
+                                                 </layoutData>
+                                             </Input>
+-                                            <Input editable="{= !${currentConfig>/isUpdate}}"
+-                                                   placeholder="{i18n>ATTRIBUTE3_NAME}"
+-                                                   value="{currentConfig>/attribute3}">
++                                            <Input
++                                                    placeholder="{i18n>ATTRIBUTE3_NAME}"
++                                                    value="{currentConfig>/value3}">
+                                                 <layoutData>
+                                                     <l:GridData span="XL3 L3 M3 S6"/>
+                                                 </layoutData>
+                                             </Input>
+-                                            <Input editable="{= !${currentConfig>/isUpdate}}"
+-                                                   placeholder="{i18n>ATTRIBUTE4_NAME}"
+-                                                   value="{currentConfig>/attribute4}">
++                                            <Input
++                                                    placeholder="{i18n>ATTRIBUTE4_NAME}"
++                                                    value="{currentConfig>/value4}">
+                                                 <layoutData>
+                                                     <l:GridData span="XL3 L3 M3 S6"/>
+                                                 </layoutData>
+Index: www/controller/CateConfig.controller.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/controller/CateConfig.controller.js	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/controller/CateConfig.controller.js	(date 1554699659026)
+@@ -30,6 +30,20 @@
+             var data = models.getCateConfigSet(shopId);
+             model.setProperty("/", data);
+         },
++        onChangeStatusCateConfig: function () {
++            var currentConfigModel = this.shopConfigDialog.getModel("currentConfig");
++            var data = currentConfigModel.getProperty("/");
++            var sendData = {
++                cateConfigId: data.id,
++                status: data.status === 1 ? 2 : 1
++            };
++            var result = models.changeStatusCateConfig(sendData);
++            if (result) {
++                this.bindCateConfigModel();
++                this.shopConfigDialog.close();
++            }
++        },
++
+         onCreateConfigPressed: function () {
+             if (!this.shopConfigDialog) {
+                 this.shopConfigDialog = this.initFragment("mortgage.pawnshop.fragment.ShopConfigDialog", "currentConfig");
+@@ -53,19 +67,49 @@
+             }
+             //set data for detailConfigDialog
+             currentConfigModel.setProperty("/", data, null, false);
++            currentConfigModel.setProperty("/cateId", data.category.id, null, false);
+             // set mode = update
+             currentConfigModel.setProperty("/isUpdate", true, null, false);
+             this.shopConfigDialog.open();
+         },
+-        onCateConfigUpdate: function () {
++        onSubmitCateConfig: function () {
++            //get shopId
++            var accountModel = this.getModel("account");
++            if (!accountModel) {
++                this.getRouter().navTo("login", true);
++                return;
++            }
++            var shopId = accountModel.getProperty("/shop/id");
+             //get data of editing cate config
+             var currentConfigModel = this.shopConfigDialog.getModel("currentConfig");
+             var data = currentConfigModel.getProperty("/");
++            data.shopId = shopId;
++            data.categoryId = parseInt(data.cateId);
++            data.cateConfigId = parseInt(data.id);
++            if (data.value1) {
++                data.attributes = data.value1;
++            }
++            if (data.value2) {
++                data.attributes = data.attributes + "," + data.value2;
++            }
++            if (data.value3) {
++                data.attributes = data.attributes + "," + data.value3;
++            }
++            if (data.value4) {
++                data.attributes = data.attributes + "," + data.value4;
++            }
++            var updateResult = false;
+             // submit changes
+-            var updateResult = models.postCateConfigSet(data);
++            if (data.isUpdate) {
++                updateResult = models.updateCateConfigSet(data);
++            } else {
++                updateResult = models.postCateConfigSet(data);
++            }
+             if (updateResult) {
+                 var msg = this.getResourceBundle().getText("msgSavedChanges");
+                 MessageToast.show(msg);
++                //refresh CateConfig View
++                this.bindCateConfigModel();
+                 this.shopConfigDialog.close();
+             } else {
+                 //handle error here
+Index: www/controller/BaseController.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/controller/BaseController.js	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/controller/BaseController.js	(date 1554700972352)
+@@ -221,9 +221,7 @@
+                 url: url,
+                 type: method,
+                 async: false,
+-                headers: {
+-                  "Access-Control-Allow-Origin": "https://backend-mortgage.dfksoft.com/new"
+-                },
++
+                 //end-local
+                 dataType: "json",
+                 context: this,
+Index: www/model/models.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/model/models.js	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/model/models.js	(date 1554699429015)
+@@ -152,6 +152,58 @@
+ 
+                 }
+ 
++            });
++            return returnCallback;
++        },
++        updateCateConfigSet: function (data) {
++            var url;
++            if (serverInfo.useLocal) {
++                return true;
++            } else {
++                url = serverInfo.url + "/chinh-sua-cau-hinh-danh-muc";
++            }
++            var returnCallback = false;
++            $.ajax({
++                url: url,
++                context: this,
++                dataType: 'json',
++                data: data,
++                method: 'PUT',
++                async: false,
++                success: function (d, r, xhr) {
++                    data = d;
++                    returnCallback = true;
++                },
++                error: function (e) {
++
++                }
++
++            });
++            return returnCallback;
++        },
++        changeStatusCateConfig: function (data) {
++            var url;
++            if (serverInfo.useLocal) {
++                return true;
++            } else {
++                url = serverInfo.url + "/thay-doi-trang-thai-cau-hinh-danh-muc";
++            }
++            var returnCallback = false;
++            $.ajax({
++                url: url,
++                context: this,
++                dataType: 'json',
++                data: data,
++                method: 'PUT',
++                async: false,
++                success: function (d, r, xhr) {
++                    data = d;
++                    returnCallback = true;
++                },
++                error: function (e) {
++
++                }
++
+             });
+             return returnCallback;
+         },
+Index: www/i18n/i18n.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/i18n/i18n.properties	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/i18n/i18n.properties	(date 1554699118669)
+@@ -129,6 +129,8 @@
+ liquidateAfter = Thanh lý sau
+ status_locked = Khóa
+ status_active = Hoạt động
++setCateConfigAsInactive=Khóa Cấu hình
++setCateConfigAsActive=Mở khóa Cấu hình
+ status_all = Tất cả
+ overdue_days = ngày quá hạn
+ ADD_SHOP_CONFIG=Thêm cấu hình Tài sản
+Index: www/model/account.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- www/model/account.json	(revision a5fd7fc90d6cad61a09e40114a6464c4ca18634a)
++++ www/model/account.json	(date 1554695567164)
+@@ -2,7 +2,7 @@
+   "user": {
+     "id": 7,
+     "role": {
+-      "id": 2,
++      "id": 3,
+       "roleName": "ROLE_PAWNER",
+       "description": null
+     },

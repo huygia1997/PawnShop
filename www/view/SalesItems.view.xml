@@ -1,0 +1,60 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="mortgage.pawnshop.controller.SalesItems">
+    <Page showHeader="false">
+        <content>
+            <List growing="true" growingScrollToLoad="true" growingThreshold="6"
+                  mode="SingleSelectMaster" includeItemInSelection="true" itemPress="onSalesPressed"
+                  inset="{= !${device>/support/touch}}" items="{sales>/}">
+                <headerToolbar>
+                    <Toolbar>
+                        <content>
+                            <Title text="{i18n>salesItems}"/>
+                            <ToolbarSpacer/>
+                            <Button text="{i18n>create_salesItem}" press="onCreateSalesPressed" icon="sap-icon://add"/>
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem type="Active"
+                                    firstStatus     ="{sales>saleItem/status}"
+                                    highlight="{ path: 'sales>saleItem/status',
+                                                formatter: '.formatter.salesStatusState'}"
+                                    iconDensityAware="false" icon="{sales>saleItem/picUrl}"
+                                    number="{
+    parts: [
+        {path: 'sales>saleItem/price'},
+        {path: 'global>/currencyCode'}
+    ],
+    type: 'sap.ui.model.type.Currency',
+    formatOptions: {
+        showMeasure: false
+    }
+}" numberUnit="{global>/currencyCode}"
+                                    title="{sales>saleItem/itemName}">
+                        <attributes>
+                            <ObjectAttribute title="{i18n>liquidationDate}"
+                                             text="{ path : 'sales>saleItem/liquidationDate',
+                            type: 'sap.ui.model.type.Date',
+                            formatOptions: {
+                            source: {
+                            pattern: 'yyyy-MM-ddTHH:mm:ss.sss+hhmm'
+                            },
+                            pattern: 'dd-MM-yyyy'
+                            }
+                            }"/>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{path:'sales>saleItem/status',
+                                                 formatter: '.formatter.salesStatusStateDescription' }"
+                                          state="{path:'sales>saleItem/status',
+                                                   formatter: '.formatter.salesStatusState' }"/>
+                        </firstStatus>
+
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

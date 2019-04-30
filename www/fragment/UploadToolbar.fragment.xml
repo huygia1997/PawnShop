@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified"
+                         displayBlock="true">
+    <Toolbar>
+        <content>
+            <u:FileUploader iconOnly="true" multiple="false"
+                            buttonOnly="true"
+                            icon="sap-icon://add-photo" uploadOnChange="false"
+                            useMultipart="false"
+                            fileType="JPG,JPEG,jpeg,jpg,PNG,png"
+                            sameFilenameAllowed="true"
+                            typeMissmatch="onTypeMissmatch"
+                            change="onUploadPress"/>
+            <ToolbarSpacer/>
+            <Button visible="{= ${createTrans>/picturesObj}.length > 0 ? true : false }"
+                    type="Ghost" text="{i18n>change_pic}"
+                    press="onChangePic"
+                    icon="sap-icon://edit"/>
+            <Button visible="{= ${createTrans>/picturesObj}.length > 0 ? true : false }"
+                    text="{i18n>del_pic}"
+                    press="onDeletePic"
+                    icon="sap-icon://delete"/>
+        </content>
+    </Toolbar>
+    <Carousel showPageIndicator="true" class="smallCrs sapUiContentPadding"
+              width="100%" pages="{transDetail>/pictureList}"
+              loop="true" id="carUploadedImg">
+        <pages>
+            <Image src="{transDetail>pictureUrl}"/>
+        </pages>
+    </Carousel>
+</core:FragmentDefinition>

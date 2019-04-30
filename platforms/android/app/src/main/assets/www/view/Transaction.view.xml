@@ -1,0 +1,166 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:fb="sap.ui.comp.filterbar"
+        xmlns:l="sap.ui.layout"
+        xmlns:core="sap.ui.core"
+        controllerName="mortgage.pawnshop.controller.Transaction">
+    <Page showHeader="false">
+        <!--<Button text="{i18n>btn_register_pawnshop}" press="onRegister"/>-->
+
+        <PullToRefresh visible="{device>/support/touch}" refresh="onRefresh"/>
+        <l:VerticalLayout width="100%">
+            <fb:FilterBar id="filterBar" header="{i18n>filterBar}" showFilterConfiguration="false"
+                          useToolbar="false" filterBarExpanded="true" showGoOnFB="false"
+                          reset="onReset" search="onSearch"
+                          showRestoreOnFB="true" showClearOnFB="false">
+                <fb:filterItems>
+                    <fb:FilterItem mandatory="false" name="A" label="{i18n>item_cat}">
+                        <fb:control>
+                            <MultiComboBox
+                                    items="{category>/}"
+                                    placeholder="{i18n>filterByItemCat}"
+                                    selectionFinish="onFilterByItemCat">
+                                <layoutData>
+                                    <ToolbarLayoutData maxWidth="15rem" shrinkable="true" minWidth="5rem"/>
+                                </layoutData>
+                                <items>
+                                    <core:Item text="{category>categoryName}"
+                                               key="{category>id}"/>
+
+                                </items>
+                            </MultiComboBox>
+                        </fb:control>
+                    </fb:FilterItem>
+
+                    <fb:FilterItem name="STATUS" label="{i18n>status}" labelTooltip="{i18n>filterByStatus}"
+                                   mandatory="false">
+                        <fb:control>
+                            <MultiComboBox
+                                    placeholder="{i18n>filterByStatus}"
+                                    selectionFinish="onFilterByStatus">
+                                <layoutData>
+                                    <ToolbarLayoutData maxWidth="15rem" shrinkable="true" minWidth="5rem"/>
+                                </layoutData>
+                                <items>
+                                    <core:Item text="{i18n>NOT_OVERDUE}"
+                                               key="1"/>
+                                    <core:Item text="{i18n>WAIT_FOR_LIQUIDATION}"
+                                               key="2"/>
+                                    <core:Item text="{i18n>ON_DUE_DATE}"
+                                               key="3"/>
+                                    <core:Item text="{i18n>REDEEMED}"
+                                               key="4"/>
+                                    <core:Item text="{i18n>LATE}"
+                                               key="5"/>
+                                    <core:Item text="{i18n>LIQUIDATION}"
+                                               key="6"/>
+                                    <core:Item text="{i18n>CANCELED}"
+                                               key="7"/>
+                                </items>
+                            </MultiComboBox>
+                        </fb:control>
+                    </fb:FilterItem>
+                </fb:filterItems>
+            </fb:FilterBar>
+        </l:VerticalLayout>
+        <Table growing="true" growingThreshold="5" growingScrollToLoad="true" fixedLayout="false"
+               popinLayout="Block" alternateRowColors="true"
+               inset="{= !${device>/support/touch}}"
+               id="tblTransaction"
+               items="{trans>/}">
+            <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+
+                        <Title level="H2" text="{i18n>title_transaction}"/>
+                        <ToolbarSpacer/>
+
+                        <Button icon="sap-icon://add"
+                                text="{= !${device>/system/phone} ? ${i18n>btn_create_transaction} : '' }"
+                                press="onCreateTransaction"/>
+                    </content>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column hAlign="End" popinDisplay="Inline" demandPopin="true" popinHAlign="Begin"
+                        minScreenWidth="900px">
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>bl_tranid}"/>
+                </Column>
+                <Column>
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>pawnee_name}"/>
+                </Column>
+                <Column sortIndicator="Ascending" width="6rem" hAlign="Center" minScreenWidth="900px" demandPopin="true"
+                        popinDisplay="Inline"
+                        popinHAlign="End">
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>date}"/>
+                </Column>
+                <Column minScreenWidth="900px" popinDisplay="Inline" demandPopin="true" popinHAlign="End">
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>item}"/>
+                </Column>
+                <Column sortIndicator="Ascending" hAlign="Right" minScreenWidth="900px" popinDisplay="Inline"
+                        demandPopin="true"
+                        popinHAlign="End">
+                    <Label textAlign="Right" text="{i18n>AMOUNT}"/>
+                </Column>
+                <Column width="6rem" minScreenWidth="900px">
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>item_cat}"/>
+                </Column>
+                <Column width="6rem" hAlign="Center">
+                    <Label wrapping="true" textAlign="Center" wrappingType="Hyphenated" text="{i18n>next_date}"/>
+                </Column>
+                <Column hAlign="Center">
+                    <Label wrapping="false" wrappingType="Hyphenated" text="{i18n>status}"/>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem highlight="{
+							path: 'trans>status',
+							formatter: '.formatter.transStatusState'
+						}" press="onTransDetailPress" type="Active">
+                    <cells>
+                        <Text text="{trans>id}"/>
+                        <Title text="{trans>pawneeInfo/name}"/>
+                        <Text text="{ path : 'trans>startDate',
+                                      type: 'sap.ui.model.type.Date',
+                                      formatOptions: {
+                                                      source: {
+                                                               pattern: 'yyyy-MM-ddTHH:mm:ss.sss+hhmm'
+                                                               },
+                                                      pattern: 'dd-MM-yyyy'
+                                                      }
+                                                  }"/>
+                        <Text wrapping="true" text="{trans>itemName}"/>
+                        <ObjectNumber unit="VND" number="{
+                        parts: [
+                            {path: 'trans>basePrice'},
+                            {path: 'global>/currencyCode'}
+                        ],
+                        formatter : '.formatter.formattedCurrency'
+                        }"/>
+                        <Text text="{trans>category/categoryName}"/>
+                        <Text text="{ path: 'trans>nextPaymentDate',
+                                      type: 'sap.ui.model.type.Date',
+                                      formatOptions: {
+                                                       source: {
+                                                                pattern: 'yyyy-MM-ddTHH:mm:ss.sss+hhmm'
+                                                                },
+                                                       pattern: 'dd-MM-yyyy'
+                                                      }
+                                        }"/>
+                        <ObjectStatus
+                                text="{
+							path: 'trans>status',
+							formatter: '.formatter.transStatusDesc'
+						}"
+                                state="{
+							path: 'trans>status',
+							formatter: '.formatter.transStatusState'
+						}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

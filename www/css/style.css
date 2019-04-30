@@ -1,0 +1,232 @@
+/* Enter your custom styles here */
+.side-navigation-demo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    max-width: 15rem;
+}
+.transparent_background {
+    height: 200px;
+    background: transparent !important; /* For browsers that do not support gradients */
+}
+.menuBackground {
+    background-color: #FFFFFF;
+}
+
+.cusLine .sapMText {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.closebtn .sapMBtnInner {
+    border-color: #3c4449;
+}
+
+.TwoLinesHeader .sapMList {
+    margin-top: 100px !important;
+}
+
+/*Taivt5 */
+/* override background color for non-accessibility themes */
+
+.sapUiDemoCart .welcomePrice {
+    width: 100%;
+    padding: 0;
+    border-bottom-width: 0;
+}
+
+.sapUiDemoCart .welcomeText {
+    display: block;
+    position: relative;
+    bottom: 4.5rem;
+    padding-left: 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn_THR_login .sapMBtnInner {
+    background-color: #0172bc !important;
+    border-color: #0172bc !important;
+
+
+}
+
+.btn_THR_login .sapMBtnContent {
+    font-weight: 500 !important;
+    font-size: 17px !important;
+    text-shadow: none !important;
+}
+
+.btn_THR_login .sapMBtnActive {
+    color: #fff !important;
+    background-color: #005994 !important;
+}
+
+html.sap-phone .tileBorder {
+    width: 310px !important;
+    position: relative;
+    float: left;
+    padding: 1em;
+    background: #fff;
+
+    border: none !important;
+}
+
+.tileBorder {
+    width: 310px !important;
+    position: relative;
+    float: left;
+    padding: 1em;
+    background: #fff;
+
+    border: none !important;
+}
+
+/*Taivt5 */
+/* override background color for non-accessibility themes */
+
+.customContentPage {
+    width: 100% !important;
+    align-items: center !important;
+}
+
+.customPrice {
+    color: red !important;
+}
+
+.sapUiDemoCart .welcomePrice {
+    width: 100%;
+    padding: 0;
+    border-bottom-width: 0;
+}
+
+.sapUiDemoCart .welcomeText {
+    display: block;
+    position: relative;
+    bottom: 4.5rem;
+    padding-left: 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: red !important;
+}
+
+.Object_Att_No_Overflow .sapMObjectAttributeText {
+    white-space: pre-line !important;
+    max-width: 80% !important;
+    word-wrap: normal !important;
+    vertical-align: text-top !important;
+}
+
+/*.sapMDialog:not(.sapMDialog-NoHeader):not(.sapMDialog-NoFooter):not(.sapMDialogWithSubHeader) {*/
+/*width: 50% !important;*/
+/*max-height: calc(100% - 6rem - 7%);*/
+/*}*/
+
+.FOOTER_NO_PADDING {
+    padding: 0 !important;
+}
+
+/*Icon Tab Bar*/
+html.sap-phone .sapMITB .sapMITBItemNoCount.sapMITBFilter:last-child {
+    padding-right: 0;
+}
+
+html.sap-phone .sapMITB .sapMITBScrollContainer {
+    margin: 0 0 !important;
+}
+
+html.sap-phone .sapMITBHead {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.smallCrs {
+    min-width: 10rem !important;
+}
+
+html.sap-phone .sapMITBFilterDefault {
+    color: #0072bb !important;
+}
+
+html.sap-phone .sapMITBFilter {
+    margin: 0 0 !important;
+    width: 50%;
+}
+
+html.sap-phone .sapMITBText {
+    text-align: center !important;
+}
+
+sapMFlexBoxAlignContentStretch1 {
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    align-items: center !important;
+}
+
+.Left {
+    width: 90px;
+}
+
+.Center {
+    width: 1000px;
+}
+
+.Right {
+    width: 150px;
+}
+
+
+/*NEW PROJECT*/
+.longTextIconTabBar .sapMITBHorizontalWrapper {
+    max-width: 10rem;
+}
+
+.longTextIconTabBar .sapMITBHorizontal.sapMITBFilter > .sapMITBHorizontalWrapper > .sapMITBText {
+    max-width: 10rem;
+}
+.custom-map-register {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+}
+
+.customListItem {
+	display: inline-block;
+	width: 100%;
+}
+.customListItem ul {
+	display: inline-block;
+	width: 100%;
+}
+.customListItem ul li {
+	display: inline-block;
+	width: 30%;
+	margin: 0 10px;
+	border-radius: 10px;
+}
+.box_shop {
+	width: 100%;
+	height: 350px;
+}
+.listShopItem_image {
+	width: 100%;
+	height: 200px;
+}
+.sapMLIBImgNav {
+	display: none !important;
+}
+.lb_listShop {
+	width: 75px;
+}

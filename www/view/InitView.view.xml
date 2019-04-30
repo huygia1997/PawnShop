@@ -1,0 +1,3 @@
+<mvc:View controllerName="mortgage.pawnshop.controller.InitView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <App mobileWebAppCapable="true"  id="rootApp"/>
+</mvc:View>

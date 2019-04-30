@@ -1,0 +1,106 @@
+{
+  "transaction": {
+    "id": 30,
+    "startDate": "2019-03-20T04:31:27.000+0000",
+    "nextPaymentDate": "2019-10-20T04:31:27.000+0000",
+    "price": 500,
+    "status": 1,
+    "pawnerId": 4,
+    "shopId": 1,
+    "paymentTerm": 7,
+    "paymentType": 3,
+    "liquidateAfter": 5,
+    "categoryItemId": 1,
+    "itemName": "Hondahuy2",
+    "pawneeInfoId": 25,
+    "category": {
+      "id": 1,
+      "categoryName": "Trang Sức",
+      "description": null,
+      "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+    },
+    "pawneeInfo": {
+      "id": 25,
+      "name": "one time pawnee",
+      "email": "ooluxiferoo123",
+      "phoneNumber": "123123123",
+      "identityNumber": "31432",
+      "address": "1"
+    }
+  },
+  "pictureList": [
+    {
+      "id": 11,
+      "pictureUrl": "\"https://www.google.com.vn/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwiLvpP_2I3hAhXsY98KHabJDo4QjRx6BAgBEAU&url=http%3A%2F%2Fcongdongimages.weebly.com%2Fpornnppan-pornpenpipat-4.html&psig=AOvVaw1QMWR9ELSmcTL5xLafo22S&ust=1553067379830495\"",
+      "descrition": null,
+      "shopId": null,
+      "transactionId": 30
+    },
+    {
+      "id": 12,
+      "pictureUrl": "\"https://www.google.com.vn/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiGt8GF2Y3hAhXQnuAKHQVuB_IQjRx6BAgBEAU&url=http%3A%2F%2Fcongdongimages.weebly.com%2Fpornnppan-pornpenpipat-4.html&psig=AOvVaw1QMWR9ELSmcTL5xLafo22S&ust=1553067379830495\"",
+      "descrition": null,
+      "shopId": null,
+      "transactionId": 30
+    }
+  ],
+  "transactionLogs": [
+    {
+      "id": 12,
+      "startDate": "2019-03-20T04:31:27.000+0000",
+      "endDate": "2019-10-20T04:31:27.000+0000",
+      "status": 2,
+      "transactionId": 30
+    }
+  ],
+  "transactionItemAttributes": [
+    {
+      "id": 1,
+      "attributeName": "\"a",
+      "attributeValue": "b\"",
+      "transactionId": 30
+    },
+    {
+      "id": 2,
+      "attributeName": "\"a",
+      "attributeValue": "\"",
+      "transactionId": 30
+    },
+    {
+      "id": 3,
+      "attributeName": "\"c",
+      "attributeValue": "d\"",
+      "transactionId": 30
+    }
+  ],
+  "transactionHistories": [
+    {
+      "id": 1,
+      "dateEvent": "2019-10-20T04:31:27.000+0000",
+      "eventString": "Bạn đã đóng hợp đồng",
+      "status": "Chuộc đồ",
+      "transactionId": 30
+    },
+    {
+      "id": 2,
+      "dateEvent": "2019-10-20T04:31:27.000+0000",
+      "eventString": "Bạn đã mở lại hợp đồng",
+      "status": "Mở lại",
+      "transactionId": 30
+    },
+    {
+      "id": 3,
+      "dateEvent": "2019-10-20T04:31:27.000+0000",
+      "eventString": "Bạn đã đóng kỳ lãi",
+      "status": "Đóng lãi",
+      "transactionId": 30
+    },
+    {
+      "id": 4,
+      "dateEvent": "2019-10-20T04:31:27.000+0000",
+      "eventString": "Bạn đã đóng hợp đồng",
+      "status": "Chuộc đồ",
+      "transactionId": 30
+    }
+  ]
+}

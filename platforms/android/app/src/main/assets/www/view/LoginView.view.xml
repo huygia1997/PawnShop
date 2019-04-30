@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m" controllerName="mortgage.pawnshop.controller.LoginView" busyIndicatorDelay="0">
+    <Page class="menuBackground" title="{i18n>login_title}" busyIndicatorDelay="0" showFooter="false"
+          showSubHeader="false">
+        <content>
+            <VBox height="100%" alignItems="Center" justifyContent="Center">
+                <HBox width="{= ${device>/system/phone} ? '100%' : '400px'}" justifyContent="Center"
+                      fitContainer="true" height="100%"
+                      alignItems="Start" direction="Column">
+                    <items>
+                        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true"
+                                                       layout="ResponsiveGridLayout" id="__form0">
+                            <sap.ui.layout.form:content>
+                                <Image src="images/logo.jpg" width="100%"/>
+                                <Input id="_txtUsername"
+                                       placeholder="{i18n>username}"/>
+                                <Input type="Password" width="100%" id="_txtPassword"
+                                       placeholder="{i18n>password}"/>
+                                <Button class="btn_THR_login" type="Emphasized" width="100%" text="{i18n>login}"
+                                        press="onLoginPressed"
+                                        id="_btnSubmit"/>
+                            </sap.ui.layout.form:content>
+                        </sap.ui.layout.form:SimpleForm>
+                    </items>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

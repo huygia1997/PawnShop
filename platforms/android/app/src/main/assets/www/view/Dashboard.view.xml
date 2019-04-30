@@ -1,0 +1,75 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns:layout="sap.ui.layout"
+          xmlns="sap.m"
+          controllerName="mortgage.pawnshop.controller.Dashboard">
+    <Page class="sapMShellGlobalOuterBackground" backgroundDesign="Transparent" showNavButton="false"
+          showHeader="false">
+        <content>
+            <layout:VerticalLayout class="sapUiResponsiveMargin">
+                <Title
+                        titleStyle="H3"
+                        text="{i18n>dashboard}"
+                        class="sapUiTinyMarginBegin"/>
+                <layout:HorizontalLayout allowWrapping="true">
+                    <GenericTile size="Responsive" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                 sizeBehavior="Responsive"
+                                 frameType="Auto"
+                                 header="{i18n>numberOfOnDueDayTrans}" mode="ContentMode"
+                                 subheader="{i18n>transactionSubHeader}"
+                                 press="press">
+                        <TileContent footer="{i18n>currentMonth}">
+                            <NumericContent size="Responsive" value="{dashboard>/numberOfOnDueDayTrans}"
+                                            valueColor="Critical"
+                                            indicator="None"/>
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile size="Responsive" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                 sizeBehavior="Responsive"
+                                 frameType="Auto"
+                                 header="{i18n>numberOfLateTrans}" mode="ContentMode"
+                                 subheader="{i18n>transactionSubHeader}"
+                                 press="press">
+                        <TileContent footer="{i18n>currentMonth}">
+                            <NumericContent size="Responsive" value="{dashboard>/numberOfLateTrans}"
+                                            valueColor="Error"
+                                            indicator="None"/>
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile size="Responsive" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                 sizeBehavior="Responsive"
+                                 frameType="Auto"
+                                 header="{i18n>numberOfLiquidatedTrans}" mode="ContentMode"
+                                 subheader="{i18n>transactionSubHeader}"
+                                 press="press">
+                        <TileContent footer="{i18n>currentMonth}">
+                            <NumericContent value="{dashboard>/numberOfLiquidatedTrans}" valueColor="Good"
+                                            indicator="None"/>
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile size="Responsive" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                 sizeBehavior="Responsive"
+                                 frameType="Auto"
+                                 header="{i18n>numberOfCateConfig}" mode="ContentMode"
+                                 subheader="{i18n>cateConfigSubHeader}"
+                                 press="press">
+                        <TileContent footer="{i18n>currentMonth}">
+                            <NumericContent value="{dashboard>/numberOfCateConfig}" valueColor="Neutral"
+                                            indicator="None"/>
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile size="Responsive" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                 sizeBehavior="Responsive"
+                                 frameType="Auto"
+                                 header="{i18n>numberOfSaleItem}" mode="ContentMode"
+                                 subheader="{i18n>salesItemSubHeader}"
+                                 press="press">
+                        <TileContent footer="{i18n>currentMonth}">
+                            <NumericContent value="{dashboard>/numberOfSaleItem}" valueColor="Neutral"
+                                            indicator="None"/>
+                        </TileContent>
+                    </GenericTile>
+                </layout:HorizontalLayout>
+            </layout:VerticalLayout>
+        </content>
+    </Page>
+</mvc:View>

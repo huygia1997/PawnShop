@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core'>
+	<StandardListItem xmlns:sem="sap.m.semantic" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" type="Active" counter="0"
+		title="{LastName} {MiddleName} {FirstName}" description="{Address}" icon="sap-icon://customer" id="__item0" info="{Cslab}" infoState="Error"/>
+</core:FragmentDefinition>

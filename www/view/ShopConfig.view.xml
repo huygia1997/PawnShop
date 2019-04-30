@@ -1,0 +1,199 @@
+<mvc:View
+        xmlns:f="sap.ui.layout.form"
+        xmlns:l="sap.ui.layout"
+        xmlns:m="sap.m"
+        xmlns:u="sap.ui.unified"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc"
+        controllerName="mortgage.pawnshop.controller.ShopConfig"
+        xmlns="sap.uxap">
+    <m:Page showHeader="false">
+        <ObjectPageLayout id="objectPageLayout">
+            <headerTitle>
+                <ObjectPageHeader
+                        objectImageURI="{shopConfig>/shop/avatarUrl}"
+                        isObjectIconAlwaysVisible="true"
+                        objectImageShape="Square"
+                        objectTitle="{shopConfig>/shop/shopName}">
+                    <actions>
+                        <ObjectPageHeaderActionButton
+                                id="save"
+                                text="{i18n>submitChangeRequest}"
+                                hideText="false"
+                                press="onSavePressed"
+                                visible="{shopConfig>/isEditing}"
+                                type="Emphasized"/>
+                        <ObjectPageHeaderActionButton
+                                id="cancel"
+                                text="{i18n>cancel}"
+                                visible="{shopConfig>/isEditing}"
+                                press="onCancelPressed"
+                                hideText="false"/>
+                        <ObjectPageHeaderActionButton
+                                id="edit"
+                                visible="{= ${account>/user/status} === 1 &amp;&amp; !${shopConfig>/isEditing} }"
+                                enabled="{= ${account>/shop/status} === 2 }"
+                                text="{i18n>editShopInfo}"
+                                press="onEditPressed"
+                                type="Emphasized"
+                                hideText="false"/>
+                    </actions>
+                </ObjectPageHeader>
+            </headerTitle>
+            <headerContent>
+                <ObjectPageHeaderContent>
+                    <content>
+                        <u:FileUploader class="sapUiNoMargin"
+                                        iconOnly="false" multiple="false"
+                                        buttonOnly="true"
+                                        buttonText="{i18n>updateAvatar}"
+                                        icon="sap-icon://edit" uploadOnChange="false"
+                                        useMultipart="false"
+                                        fileType="JPG,JPEG,jpeg,jpg,PNG,png"
+                                        sameFilenameAllowed="true"
+                                        typeMissmatch="onTypeMissmatch"
+                                        change="onUploadPress"/>
+                    </content>
+                </ObjectPageHeaderContent>
+            </headerContent>
+            <sections>
+                <ObjectPageSection title="{i18n>general_info}">
+                    <subSections>
+                        <ObjectPageSubSection>
+                            <blocks>
+                                <ObjectPageLazyLoader
+                                        id="shopOwnerLazyLoader">
+                                    <f:SimpleForm
+                                            editable="true"
+                                            layout="ResponsiveGridLayout">
+                                        <f:content>
+                                            <m:Label
+                                                    text="{i18n>shopName}"
+                                                    labelFor="firstNameInput"/>
+                                            <m:Input editable="{shopConfig>/isEditing}"
+                                                     id="firstNameInput"
+                                                     type="Text"
+                                                     width="100%"
+                                                     value="{shopConfig>/shop/shopName}"/>
+                                            <m:Label
+                                                    labelFor="emailInput"
+                                                    text="{i18n>email}"/>
+                                            <m:Input editable="{shopConfig>/isEditing}"
+                                                     id="emailInput"
+                                                     type="Text"
+                                                     width="100%"
+                                                     value="{shopConfig>/shop/email}"/>
+                                            <m:Label
+                                                    labelFor="facebookInput"
+                                                    text="{i18n>facebook}"/>
+                                            <m:Input editable="{shopConfig>/isEditing}"
+                                                     id="facebookInput"
+                                                     type="Text"
+                                                     width="100%"
+                                                     value="{shopConfig>/shop/facebook}"/>
+                                            <m:Label
+                                                    labelFor="phoneNumberInput"
+                                                    text="{i18n>phoneNumber}"/>
+                                            <m:Input editable="{shopConfig>/isEditing}"
+                                                     id="phoneNumberInput"
+                                                     type="Text"
+                                                     width="100%"
+                                                     value="{shopConfig>/shop/phoneNumber}"/>
+                                            <m:Label text="{i18n>policy}"/>
+                                            <m:TextArea editable="{shopConfig>/isEditing}" height="8rem"
+                                                        growingMaxLines="10"
+                                                        value="{shopConfig>/shop/policy}"/>
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </ObjectPageLazyLoader>
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+                <ObjectPageSection title="{i18n>shop_address}">
+                    <subSections>
+                        <ObjectPageSubSection>
+                            <blocks>
+                                <ObjectPageLazyLoader>
+                                    <l:VerticalLayout width="100%">
+                                        <f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+                                            <f:content>
+                                                <m:Label
+                                                        labelFor="addressCountryInput"
+                                                        text="{i18n>address}"/>
+                                                <m:Select enabled="{shopConfig>/isEditing}" id="selectCity"
+                                                          selectedKey="{path:'shopConfig>/cityId',
+                                                                                    type:'sap.ui.model.type.Integer' }"
+                                                          items="{city>/}" change="onCityChanged">
+                                                    <m:items>
+                                                        <core:Item key="{city>id}" text="{city>cityName}"/>
+                                                    </m:items>
+                                                </m:Select>
+                                                <m:Select id="selectDistrict"
+                                                          selectedKey="{shopConfig>/shop/address/districtId}"
+                                                          change="onDistrictChanged" enabled="{shopConfig>/isEditing}"
+                                                          items="{district>/}">
+                                                    <m:items>
+                                                        <core:Item key="{district>id}" text="{district>districtName}"/>
+                                                    </m:items>
+                                                </m:Select>
+                                                <m:Label
+                                                        labelFor="ip_address"
+                                                        text=""/>
+                                                <m:Input editable="{shopConfig>/isEditing}" id="ip_address"
+                                                         value="{shopConfig>/shop/address/fullAddress}"
+                                                         change="getLocationFromInput" type="Text"
+                                                         placeholder="{i18n>input_register_address}"/>
+                                            </f:content>
+                                        </f:SimpleForm>
+                                        <m:Label wrapping="true" text="{i18n>msgPleaseRemarkYourLocation}"/>
+                                        <m:VBox id="map_canvas" fitContainer="true" justifyContent="Center"
+                                                alignItems="Center"
+                                                class="custom-map-register"></m:VBox>
+                                    </l:VerticalLayout>
+                                </ObjectPageLazyLoader>
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+                <!--<ObjectPageSection title="{i18n>pictures}">-->
+                <!--<subSections>-->
+                <!--<ObjectPageSubSection>-->
+                <!--<blocks>-->
+                <!--<ObjectPageLazyLoader>-->
+                <!--<l:VerticalLayout width="100%">-->
+                <!--&lt;!&ndash;<l:layoutData>&ndash;&gt;-->
+                <!--&lt;!&ndash;<l:GridData span="XL8 L6 M8 S8"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;</l:layoutData>&ndash;&gt;-->
+                <!--<l:content>-->
+                <!--<m:Toolbar>-->
+                <!--<m:content>-->
+
+                <!--<m:ToolbarSpacer/>-->
+                <!--<m:Button class="sapUiNoMargin"-->
+                <!--visible="{= ${createTrans>/picturesObj}.length > 0 ? true : false }"-->
+                <!--text="{i18n>del_pic}"-->
+                <!--type="Transparent"-->
+                <!--press="onDeletePic"-->
+                <!--icon="sap-icon://delete"/>-->
+                <!--</m:content>-->
+                <!--</m:Toolbar>-->
+                <!--<m:Carousel showPageIndicator="true" class="smallCrs sapUiContentPadding"-->
+                <!--width="100%" pages="{createTrans>/picturesObj}"-->
+                <!--loop="true" id="carUploadedImg">-->
+                <!--<m:pages>-->
+                <!--<m:Image src="{createTrans>pictureUrl}"/>-->
+                <!--</m:pages>-->
+                <!--</m:Carousel>-->
+                <!--</l:content>-->
+                <!--</l:VerticalLayout>-->
+                <!--</ObjectPageLazyLoader>-->
+                <!--</blocks>-->
+                <!--</ObjectPageSubSection>-->
+                <!--</subSections>-->
+                <!--</ObjectPageSection>-->
+
+            </sections>
+        </ObjectPageLayout>
+    </m:Page>
+</mvc:View>

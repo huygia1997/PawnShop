@@ -1,0 +1,155 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:l="sap.ui.layout"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:u="sap.ui.unified"
+        xmlns:core="sap.ui.core"
+        xmlns="sap.m"
+        controllerName="mortgage.pawnshop.controller.CreateSalesItem">
+    <Page title="{i18n>CT_FORM_CREATE_SALES_ITEM}" showNavButton="true" navButtonPress="back">
+        <content>
+            <f:Form editable="true">
+
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="4"
+                            emptySpanS="0"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false"/>
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer>
+                        <f:toolbar>
+                            <Toolbar style="Standard">
+                                <content>
+                                    <Title level="H5" text="{i18n>ENTER_DATA_INTO_CREATE_SALES_FORM}"
+                                           wrapping="true"/>
+                                    <ToolbarSpacer/>
+                                </content>
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <f:FormElement>
+                                <f:label>
+                                    <Label required="false" text="{i18n>ITEM}"/>
+                                </f:label>
+                                <f:fields>
+                                    <Input value="{createSalesItem>/itemName}" placeholder="{i18n>ITEM_NAME}">
+                                        <!--<layoutData>-->
+                                        <!--<l:GridData span="XL5 L2 M4 S6"/>-->
+                                        <!--</layoutData>-->
+                                    </Input>
+                                    <Select id="selectCate" selectedKey="{createSalesItem>/categoryId}"
+                                            items="{category>/}"
+                                            placeholder="{i18n>ITEM_TYPE}">
+                                        <!--<layoutData>-->
+                                        <!--<l:GridData span="XL3 L2 M4 S6"/>-->
+                                        <!--</layoutData>-->
+                                        <items>
+                                            <core:ListItem key="{category>id}"
+                                                           text="{category>categoryName}"
+                                                           additionalText="{category>description}"/>
+                                        </items>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement>
+                                <f:label>
+                                    <Label required="false" text="{i18n>salesPrice}"/>
+                                </f:label>
+                                <f:fields>
+                                    <Input width="100%" fieldWidth="80%" description="VND" textAlign="Right"
+                                           valueLiveUpdate="true"
+                                           value="{
+    parts: [
+        {path: 'createSalesItem>/price'},
+        {path: 'global>/currencyCode'}
+    ],
+    type: 'sap.ui.model.type.Currency',
+    formatOptions: {
+        showMeasure: false
+    }
+}">
+                                        <!--<layoutData>-->
+                                        <!--<l:GridData span="XL3 L4 M8 S12"/>-->
+                                        <!--</layoutData>-->
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement>
+                                <f:label>
+                                    <Label required="false" text="{i18n>description}"/>
+                                </f:label>
+                                <f:fields>
+                                    <TextArea placeholder="{i18n>enter_item_sales_info}"
+                                              value="{createSalesItem>/description}">
+                                        <!--<layoutData>-->
+                                        <!--<l:GridData span="XL3 L4 M8 S12"/>-->
+                                        <!--</layoutData>-->
+                                    </TextArea>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement>
+                                <f:label>
+                                    <Label required="false" text="{i18n>attachment}"/>
+                                </f:label>
+                                <f:fields>
+                                    <l:VerticalLayout>
+                                        <l:content>
+                                            <Toolbar>
+                                                <content>
+                                                    <u:FileUploader class="sapUiNoMargin"
+                                                                    iconOnly="true" multiple="false"
+                                                                    buttonOnly="true"
+                                                                    icon="sap-icon://add-photo" uploadOnChange="false"
+                                                                    useMultipart="false"
+                                                                    fileType="JPG,JPEG,jpeg,jpg,PNG,png"
+                                                                    sameFilenameAllowed="true"
+                                                                    typeMissmatch="onTypeMissmatch"
+                                                                    change="onUploadPress"/>
+                                                    <ToolbarSpacer/>
+                                                    <Button class="sapUiNoMargin"
+                                                            type="Transparent"
+                                                            visible="{= ${createSalesItem>/picturesObj}.length > 0 ? true : false }"
+                                                            text="{i18n>del_pic}"
+                                                            press="onDeletePic"
+                                                            icon="sap-icon://delete"/>
+                                                </content>
+                                            </Toolbar>
+                                            <Carousel showPageIndicator="true" class="smallCrs sapUiContentPadding"
+                                                      width="100%" pages="{createSalesItem>/picturesObj}"
+                                                      loop="true" id="carUploadedImg">
+                                                <pages>
+                                                    <Image src="{createSalesItem>pictureUrl}"/>
+                                                </pages>
+                                            </Carousel>
+                                            <Text width="100%" textAlign="Center"
+                                                  visible="{= ${createSalesItem>/picturesObj}.length > 0 ? false : true }"
+                                                  text="{i18n>NO_IMAGE_DATA}"/>
+                                        </l:content>
+                                    </l:VerticalLayout>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button type="Accept" press="submitSalesItemPressed" text="{i18n>submitLiquidate}"/>
+                <Button text="{i18n>BTN_CLEAR}"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

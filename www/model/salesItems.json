@@ -1,0 +1,338 @@
+[
+  {
+    "saleItem": {
+      "id": 1,
+      "price": 32,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 90,
+      "transactionId": 30,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-03-21T11:31:27.000+0000",
+      "favoriteCount": 2,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 2,
+      "price": 30,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 140,
+      "transactionId": 31,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-02-20T11:31:27.000+0000",
+      "favoriteCount": 1,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": [
+      {
+        "id": 13,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 2,
+        "status": 2
+      },
+      {
+        "id": 14,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 2,
+        "status": 2
+      },
+      {
+        "id": 15,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 2,
+        "status": 2
+      },
+      {
+        "id": 16,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 2,
+        "status": 2
+      }
+    ]
+  },
+  {
+    "saleItem": {
+      "id": 3,
+      "price": 31,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 24,
+      "transactionId": 32,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2018-02-20T11:31:27.000+0000",
+      "favoriteCount": 1,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 4,
+      "price": 33,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 12,
+      "transactionId": 33,
+      "itemName": "aaa",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-01-20T11:31:27.000+0000",
+      "favoriteCount": 1,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 5,
+      "price": 34,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 53,
+      "transactionId": 34,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-02-12T11:31:27.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 6,
+      "price": 35,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 5,
+      "transactionId": 35,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-02-02T11:31:27.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 7,
+      "price": 36,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 12,
+      "transactionId": 36,
+      "itemName": "abc",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-02-20T11:31:27.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 8,
+      "price": 20000000,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 0,
+      "transactionId": 38,
+      "itemName": "iphone xs",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-03-28T15:07:17.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": []
+  },
+  {
+    "saleItem": {
+      "id": 9,
+      "price": 20000000,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 0,
+      "transactionId": 38,
+      "itemName": "iphone xs",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-03-28T15:07:17.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": [
+      {
+        "id": 27,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 9,
+        "status": 2
+      },
+      {
+        "id": 28,
+        "pictureUrl": "https://i.imgur.com/tc3K6le.jpg",
+        "idCloud": null,
+        "descrition": null,
+        "deleteHash": null,
+        "objectId": 9,
+        "status": 2
+      }
+    ]
+  },
+  {
+    "saleItem": {
+      "id": 10,
+      "price": 20000000,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 0,
+      "transactionId": 38,
+      "itemName": "iphone xsaaa",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-03-28T15:07:17.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": [
+      {
+        "id": 29,
+        "pictureUrl": "https://i.imgur.com/YuonV6H.jpg",
+        "idCloud": "YuonV6H",
+        "descrition": null,
+        "deleteHash": "TCc399KEELZY98M",
+        "objectId": 10,
+        "status": 2
+      }
+    ]
+  },
+  {
+    "saleItem": {
+      "id": 11,
+      "price": 20000000,
+      "status": 1,
+      "categoryId": 7,
+      "viewCount": 0,
+      "transactionId": 38,
+      "itemName": "iphone xsaaa",
+      "picUrl": "https://i.imgur.com/tc3K6le.jpg",
+      "liquidationDate": "2019-03-28T15:07:17.000+0000",
+      "favoriteCount": 0,
+      "description": null,
+      "category": {
+        "id": 7,
+        "categoryName": "Đồ Gia Dụng",
+        "description": null,
+        "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+      }
+    },
+    "pictureList": [
+      {
+        "id": 30,
+        "pictureUrl": "https://i.imgur.com/YuonV6H.jpg",
+        "idCloud": "",
+        "descrition": null,
+        "deleteHash": "",
+        "objectId": 11,
+        "status": 2
+      },
+      {
+        "id": 31,
+        "pictureUrl": "https://i.imgur.com/YuonV6H.jpg",
+        "idCloud": "YuonV6H",
+        "descrition": null,
+        "deleteHash": "",
+        "objectId": 11,
+        "status": 2
+      },
+      {
+        "id": 32,
+        "pictureUrl": "https://i.imgur.com/YuonV6H.jpg",
+        "idCloud": "YuonV6H",
+        "descrition": null,
+        "deleteHash": "TCc399KEELZY98M",
+        "objectId": 11,
+        "status": 2
+      }
+    ]
+  }
+]

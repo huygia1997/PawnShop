@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "categoryName": "Trang Sức",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/02411f59-kim-cuong.png"
+  },
+  {
+    "id": 2,
+    "categoryName": "Vàng Miếng",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/f0bba6de-vang.png"
+  },
+  {
+    "id": 3,
+    "categoryName": "Điện Thoại",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/44d27cdb-dien-thoai.png"
+  },
+  {
+    "id": 4,
+    "categoryName": "Máy Tính",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/9a2fe623-may-tinh.png"
+  },
+  {
+    "id": 5,
+    "categoryName": "Đồng Hồ",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/70e7d04a-dong-ho.png"
+  },
+  {
+    "id": 6,
+    "categoryName": "Nhà đất",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/bef27ba6-nha.png"
+  },
+  {
+    "id": 7,
+    "categoryName": "Đồ Gia Dụng",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/2d0eb4d7-gia-dung.png"
+  },
+  {
+    "id": 8,
+    "categoryName": "Máy Ảnh",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/463dc0fd-may-anh.png"
+  },
+  {
+    "id": 9,
+    "categoryName": "Xe Máy",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/7d857ceb-xe-may.png"
+  },
+  {
+    "id": 10,
+    "categoryName": "Ô tô",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/4eb8282e-xe.png"
+  },
+  {
+    "id": 11,
+    "categoryName": "Sim Số Đẹp",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/b30f9ea3-sim.png"
+  },
+  {
+    "id": 12,
+    "categoryName": "Thiết bị văn phòng",
+    "description": null,
+    "iconUrl": "https://static.vietmoney.vn/vietmoney/2018/12/93ae21c2-do-van-phong.png"
+  }
+]

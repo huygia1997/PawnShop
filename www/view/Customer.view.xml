@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+          controllerName="mortgage.pawnshop.controller.Customer">
+    <Page showHeader="false">
+        <content>
+            <Panel class="sapUiResponsiveMargin" headerText="{i18n>LBL_SEARCH_CUSTOMER}">
+                <HBox alignItems="Center" justifyContent="SpaceAround" wrap="WrapReverse"
+                      width="100%">
+                    <SearchField
+                            showRefreshButton="false"
+                            placeholder="{i18n>LBL_CUSTOMER_SEARCH}"
+                            search="onCustomerSuggest"
+                            id="inpSearch"
+                            width="300px"/>
+                    <Button icon="sap-icon://add-contact"
+                            width="300px" text="{i18n>LBL_CREATE_CUSTOMER}"
+                            press="onAddCustomerPress"/>
+                </HBox>
+            </Panel>
+            <Table mode="None"
+                   visible="{= ${CustomerSet>/results} ? true : false }" noDataText="{i18n>CUSTOMER_NO_DATA}"
+                   inset="{= !${device>/system/phone} }"
+                   id="_tblCustomerSet" items="{CustomerSet>/results}">
+                <columns>
+                    <Column visible="{= ${CustomerSet>/results} &amp;&amp; ${CustomerSet>/results}.length === 0 ? false : true }">
+                        <header>
+                            <Label design="Bold" text="{i18n>LBL_CUSTOMER_NAME}"/>
+                        </header>
+                    </Column>
+                    <Column visible="{= ${CustomerSet>/results} &amp;&amp; ${CustomerSet>/results}.length === 0 ? false : true }"
+                            width="120px" hAlign="End" demandPopin="true" popinDisplay="Inline"
+                            minScreenWidth="desktop">
+                        <header>
+                            <Label design="Bold" text="{i18n>LBL_MOBILE}"/>
+                        </header>
+                    </Column>
+                    <Column visible="{= ${CustomerSet>/results} &amp;&amp; ${CustomerSet>/results}.length === 0 ? false : true }"
+                            popinDisplay="WithoutHeader" width="150px" hAlign="Center"
+                            demandPopin="true"
+                            minScreenWidth="desktop">
+                        <header>
+                            <Label design="Bold" text="{i18n>LBL_CSLAB}"/>
+                        </header>
+                    </Column>
+                    <Column visible="{= ${CustomerSet>/results} &amp;&amp; ${CustomerSet>/results}.length === 0 ? false : true }"
+                            popinDisplay="Inline" demandPopin="true" minScreenWidth="2560px">
+                        <header>
+                            <Label design="Bold" text="{i18n>LBL_ADDRESS}"/>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle" type="Detail" detailPress="onRowSelected">
+                        <cells>
+                            <Text text="{CustomerSet>LastName} {CustomerSet>MiddleName} {CustomerSet>FirstName}"/>
+                            <Text text="{CustomerSet>MobilePhone}"/>
+                            <Text text="{CustomerSet>Cslab}"/>
+                            <Text maxLines="2" text="{CustomerSet>Address}"/>
+                            <Text visible="false" text="{CustomerSet>Id}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
