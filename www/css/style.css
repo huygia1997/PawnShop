@@ -212,12 +212,11 @@ sapMFlexBoxAlignContentStretch1 {
 }
 .customListItem ul li {
 	display: inline-block;
-	width: 30%;
-	margin: 0 10px;
+	margin: 10px;
 	border-radius: 10px;
 }
 .box_shop {
-	width: 100%;
+	width: 300px;
 	height: 350px;
 }
 .listShopItem_image {

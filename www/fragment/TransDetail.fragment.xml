@@ -106,6 +106,7 @@
                                 <f:fields>
                                     <Button visible="{= ${transDetail>/transaction/status} === 2 }" type="Reject"
                                             press="onLiquidatePressed" text="{i18n>press_to_liquidate}"/>
+                                    <Button type="Default" press="onDownloadFile" text="{i18n>download_file}"/>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>

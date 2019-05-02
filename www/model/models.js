@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (JSONModel, Device) {
     "use strict";
     const serverInfo = {
-        // url: "http://172.20.10.2:8080", //máy HuyTG
+        // url: "http://198.13.54.16:8080/newc", //máy HuyTG
         url: "https://backend-mortgage.dfksoft.com/new", //Server DFK
         localUrl: "model",
         useLocal: false
@@ -780,6 +780,27 @@ sap.ui.define([
 			$.ajax({
 				type: "GET",
 				url: url,
+				context: this,
+				dataType: 'json',
+				async: false,
+				success: function(d, r, xhr) {
+					data = d;
+				},
+				error: function(e) {
+					data = e;
+				}
+
+			});
+			return data;
+		},
+		
+		checkTransDefault: function(data) {
+			var data;
+			var url = serverInfo.url + "/kiem-tra-phieu-mac-dinh";
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
 				context: this,
 				dataType: 'json',
 				async: false,
