@@ -412,6 +412,7 @@ sap.ui.define([
 			data.attributes = attrs.join(",");
 			//send category id
 			data.categoryId = currentConfig.category.id;
+			data.startDate = new Date(); 
 			data.startDate.setHours(7);
 			//parse Pictures json to  string
 			data.pictures = JSON.stringify(data.picturesObj);

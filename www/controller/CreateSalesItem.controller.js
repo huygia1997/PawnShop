@@ -226,8 +226,7 @@ sap.ui.define([
 				}
 				// submitData.transId = shopModel.getProperty("/transDefaultId");
 			}
-			var priceItem = parseInt(submitData.price);
-			if (submitData.itemName === "" || submitData.description === "" || priceItem > 0) {
+			if (submitData.itemName === "" || submitData.description === "" || submitData.price === "") {
 				MessageBox.error("Thông tin món hàng chưa chính xác!");
 			} else {
 				var data = models.postCreateSalesItem(submitData);
@@ -243,8 +242,9 @@ sap.ui.define([
 						};
 						data = models.postLiquidate(liqData);
 					}
-					var sucMsg = this.getResourceBundle().getText("msgCreateSuccessful");
-					MessageToast.show(sucMsg);
+					// var sucMsg = this.getResourceBundle().getText("msgCreateSuccessful");
+					// MessageToast.show(sucMsg);
+					MessageBox.success("Tạo món hàng thành công!");
 					this.back();
 				}
 			}

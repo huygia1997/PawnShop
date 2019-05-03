@@ -5,8 +5,9 @@ sap.ui.define([
 	"sap/ui/model/Filter",
 	"mortgage/pawnshop/model/formatter",
 	"sap/m/BusyDialog",
-	"mortgage/pawnshop/model/models"
-], function(BaseController, MessageToast, JSONModel, Filter, formatter, BusyDialog, models) {
+	"mortgage/pawnshop/model/models",
+	'sap/m/MessageBox'
+], function(BaseController, MessageToast, JSONModel, Filter, formatter, BusyDialog, models, MessageBox) {
 	"use strict";
 	var url = "model/transactionDetail.json";
 	return BaseController.extend("mortgage.pawnshop.controller.Transaction", {
@@ -143,6 +144,31 @@ sap.ui.define([
 			this.TransDetailDialog.close();
 			this.getRouter().navTo("sales", false);
 		},
+
+		onConfirmPassword: function() {
+			var valuePass = this.getView().byId("InputPassword").getValue();
+			var passwordLocal = localStorage.getItem("password");
+			if (valuePass === passwordLocal) {
+				this.isCorrectPassword = true;
+				this._ConfirmDialog.close();
+				this.onNextPaymentSubmit();
+			} else {
+				MessageBox.error("Mật khẩu không chính xác!");
+			}
+		},
+
+		onOpenConfirmPasswordDialog: function() {
+			if (!this._ConfirmDialog) {
+				this._ConfirmDialog = sap.ui.xmlfragment(this.getId(), "mortgage.pawnshop.fragment.ConfirmPassword",
+					this);
+				var confirmModel = new JSONModel();
+				this._ConfirmDialog.setModel(confirmModel, "confirmModel");
+				//Set models which is belonged to View to Fragment
+				this.getView().addDependent(this._ConfirmDialog);
+			}
+			this._ConfirmDialog.open();
+		},
+
 		onNextPaymentSubmit: function() {
 			var busyTitle = this.getResourceBundle().getText("payment");
 			this.openBusyDialog({
