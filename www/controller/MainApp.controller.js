@@ -47,6 +47,7 @@ sap.ui.define([
 		},
 		_onObjectMatched: function() {
 			this.bindCateConfigModel();
+			setInterval(this.getNotify(), 10000);
 		},
 		bindCateConfigModel: function() {
 			var accountModel = this.getModel("account");
@@ -90,6 +91,10 @@ sap.ui.define([
 			if (!this.checkLogin()) {
 				this.getRouter().navTo("login", true);
 			}
+			
+		},
+
+		getNotify: function() {
 			var notiModel = this.getModel("noti");
 			if (!notiModel) {
 				notiModel = new JSONModel();
@@ -112,6 +117,7 @@ sap.ui.define([
 			}
 			notiModel.setProperty("/", validNoti);
 		},
+
 		doNav: function(view, source) {
 			this.getRouter().navTo(view, true);
 			this.page.setSideExpanded(false);
