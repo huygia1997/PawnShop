@@ -416,6 +416,30 @@ sap.ui.define([
 			var getShop = accountModel.getData();
 			var shopInfo = getShop.shop;
 			console.log(shopInfo, infoPawner, dataTrans, data);
+			if(!data.attr1name) {
+				data.attr1name = "";
+			}
+			if(data.attr1value === "undefined") {
+				data.attr1value = "";
+			}
+			if(!data.attr2name) {
+				data.attr2name = "";
+			}
+			if(data.attr2value === "undefined") {
+				data.attr2value = "";
+			}
+			if(!data.attr3name) {
+				data.attr3name = "";
+			}
+			if(data.attr3value === "undefined") {
+				data.attr3value = "";
+			}
+			if(!data.attr4name) {
+				data.attr4name = "";
+			}
+			if(data.attr4value === "undefined") {
+				data.attr4value = "";
+			}
 			var apiEndpoint = "https://selectpdf.com/api2/convert/";
 			var apiKey = "6268a108-1680-43b6-833a-befada064d60";
 
@@ -447,9 +471,7 @@ sap.ui.define([
 				"\n" +
 				"    <h3><span style=\"color:#000000\"><span style=\"font-size:14px\">Bên nhận cầm cố tài sản (sau đây gọi là bên B):</span></span></h3>\n" +
 				"\n" +
-				"    <h3><span style=\"color:#000000\"><span style=\"font-size:14px\"><em>(Chọn một trong các chủ thể nêu trên)</em></span></span></h3>\n" +
-				"\n" +
-				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">:" + shopInfo.shopName + "</span></span></p>\n" +
+				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">Cửa hàng: " + shopInfo.shopName + "</span></span></p>\n" +
 				"\n" +
 				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">Hai bên đồng ý thực hiện việc cầm cố tài sản với những thoả thuận sau đây:</span></span></p>\n" +
 				"\n" +
@@ -659,9 +681,6 @@ sap.ui.define([
 				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">         </span></span></p>\n" +
 				"\n" +
 				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">2. Hai bên đã đọc Hợp đồng, đã hiểu và đồng ý tất cả các điều khoản ghi trong Hợp đồng và ký vào Hợp đồng này.</span></span></p>\n" +
-				"\n" +
-				"    <p><span style=\"color:#000000\"><span style=\"font-size:14px\">3. Hợp đồng này có hiệu lực kể từ " + data.startDate +
-				"</span></span></p>\n" +
 				"\n" +
 				"    <p> </p>\n" +
 				"\n" +

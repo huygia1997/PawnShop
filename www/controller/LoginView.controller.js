@@ -47,7 +47,7 @@ sap.ui.define([
 		 * @memberOf mortgage.pawnshop.view.LoginView
 		 */
 		onLoginPressed: function(e) {
-			this.busyDialog.open();
+			// this.busyDialog.open();
 			var verified = this.verifyUser();
 			var authorized = false;
 			if (verified) {
@@ -76,7 +76,7 @@ sap.ui.define([
 					MessageToast.show(this.txtPassword.getValueStateText());
 				}
 			}
-			this.busyDialog.close();
+			// this.busyDialog.close();
 		},
 
 		checkAuthorization: function() {

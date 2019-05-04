@@ -156,7 +156,7 @@ sap.ui.define([
 			createTransData.value2 = attrList[1].attributeValue;
 			createTransData.value3 = attrList[2].attributeValue;
 			createTransData.value4 = attrList[3].attributeValue;
-			//fil payment info
+			// fil payment info
 			createTransData.paymentTerm = replacedTrans.transaction.paymentTerm;
 			createTransData.paymentType = replacedTrans.transaction.paymentType;
 			createTransData.basePrice = replacedTrans.transaction.basePrice;
@@ -178,6 +178,7 @@ sap.ui.define([
 			createTransModel.setProperty("/", createTransData);
 			createTransModel.updateBindings(true);
 		},
+		
 		// bindShopConfigForCreateTrans: function () {
 		//     var shopId = this.getModel("account").getProperty("/shop/id");
 		//     var model = this.getModel("shopConfig");
@@ -205,7 +206,7 @@ sap.ui.define([
 			this.resizeAndUpload(currentFile, {
 				success: function(oEvt) {
 					oFileUploader.setValue("");
-					console.log(oEvt);
+					// console.log(oEvt);
 					//Here the image is on the backend, so i call it again and set the image
 					var model = that.getModel("createTrans");
 					if (!model) {
@@ -254,7 +255,7 @@ sap.ui.define([
 				tempImg.src = reader.result;
 				tempImg.onload = function() {
 					that.uploadFile(tempImg.src, mParams, file);
-				}
+				};
 			};
 			reader.readAsDataURL(file);
 		},
@@ -373,8 +374,11 @@ sap.ui.define([
 					addressObject.district = addObj[addObj.length - 1];
 					addObj.pop();
 					var streetName = "";
-					for (var a in addObj) {
-						streetName += a;
+					// for (var a in addObj) {
+					// 	streetName += a;
+					// }
+					for(var i=0;i<addObj.length;i++){
+						streetName = addObj[0];
 					}
 					addressObject.streetName = streetName;
 				}
@@ -448,7 +452,7 @@ sap.ui.define([
 				success: onSuccess,
 				error: onError
 			});
-		},
+		}
 
 		//Open dialog add customer address
 		// _openAddressDialog: function () {

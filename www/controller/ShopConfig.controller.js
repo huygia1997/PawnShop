@@ -143,7 +143,7 @@ sap.ui.define([
 				accountModel.updateBindings(true);
 				this.bindShopConfigModel();
 				// MessageToast.show(this.getResourceBundle().getText("msgChangeInfoShopSuccessfully"));
-				MessageBox.success("Thay đổi thông tin Cửa hàng thành công! Quản trị viên sẽ cập nhật thông tin Cửa hàng của bạn!");
+				MessageBox.success("Cập nhật hình ảnh thành công!");
 			} else {
 				MessageBox.error("Thay đổi không thành công!");
 			}
