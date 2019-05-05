@@ -20,6 +20,10 @@ sap.ui.define([
 			this.openPendingTrans();
 			this.bindTransactionModel();
 		},
+		onSendNoti: function() {
+			models.demoSendNoti();
+			this.bindTransactionModel();
+		},
 		openPendingTrans: function() {
 			var isPendingTrans = this.checkPassData("currentTransId");
 			if (isPendingTrans) {
@@ -416,28 +420,28 @@ sap.ui.define([
 			var getShop = accountModel.getData();
 			var shopInfo = getShop.shop;
 			console.log(shopInfo, infoPawner, dataTrans, data);
-			if(!data.attr1name) {
+			if (!data.attr1name) {
 				data.attr1name = "";
 			}
-			if(data.attr1value === "undefined") {
+			if (data.attr1value === "undefined") {
 				data.attr1value = "";
 			}
-			if(!data.attr2name) {
+			if (!data.attr2name) {
 				data.attr2name = "";
 			}
-			if(data.attr2value === "undefined") {
+			if (data.attr2value === "undefined") {
 				data.attr2value = "";
 			}
-			if(!data.attr3name) {
+			if (!data.attr3name) {
 				data.attr3name = "";
 			}
-			if(data.attr3value === "undefined") {
+			if (data.attr3value === "undefined") {
 				data.attr3value = "";
 			}
-			if(!data.attr4name) {
+			if (!data.attr4name) {
 				data.attr4name = "";
 			}
-			if(data.attr4value === "undefined") {
+			if (data.attr4value === "undefined") {
 				data.attr4value = "";
 			}
 			var apiEndpoint = "https://selectpdf.com/api2/convert/";

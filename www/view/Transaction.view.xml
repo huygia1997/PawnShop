@@ -75,6 +75,14 @@
 
                         <Title level="H2" text="{i18n>title_transaction}"/>
                         <ToolbarSpacer/>
+                        <Button text="DEMO: Send Notifications"
+		                        type="Transparent"
+		                        press="onSendNoti"
+		                        tooltip="{i18n>errorButtonTooltip}">
+		                    <layoutData>
+		                        <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+		                    </layoutData>
+		                </Button>
 
                         <Button icon="sap-icon://add"
                                 text="{= !${device>/system/phone} ? ${i18n>btn_create_transaction} : '' }"
