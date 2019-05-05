@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (JSONModel, Device) {
     "use strict";
     const serverInfo = {
-        // url: "http://192.168.2.78:8080", //máy HuyTG
+        // url: "http://198.13.54.16:8080/newc", //máy HuyTG
         url: "https://backend-mortgage.dfksoft.com/new", //Server DFK
         localUrl: "model",
         useLocal: false
@@ -80,7 +80,6 @@ sap.ui.define([
                 error: function (e) {
 
                 }
-
             });
             return data;
         },
@@ -607,7 +606,6 @@ sap.ui.define([
                 error: function (e) {
 
                 }
-
             });
             return returnCallback;
         },
@@ -774,6 +772,47 @@ sap.ui.define([
             //     }
             // }
             return filteredDistrict;
-        }
+        },
+
+		getListShop: function(userName) {
+			var data;
+			var url = serverInfo.url + "/danh-sach-cua-hang-quan-ly?userName=" + userName;
+			$.ajax({
+				type: "GET",
+				url: url,
+				context: this,
+				dataType: 'json',
+				async: false,
+				success: function(d, r, xhr) {
+					data = d;
+				},
+				error: function(e) {
+					data = e;
+				}
+
+			});
+			return data;
+		},
+		
+		checkTransDefault: function(data) {
+			var data;
+			var url = serverInfo.url + "/kiem-tra-phieu-mac-dinh";
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: data,
+				context: this,
+				dataType: 'json',
+				async: false,
+				success: function(d, r, xhr) {
+					data = d;
+				},
+				error: function(e) {
+					data = e;
+				}
+
+			});
+			return data;
+		}
     };
 });

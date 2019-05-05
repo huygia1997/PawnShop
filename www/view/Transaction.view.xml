@@ -68,7 +68,7 @@
                popinLayout="Block" alternateRowColors="true"
                inset="{= !${device>/support/touch}}"
                id="tblTransaction"
-               items="{path: 'trans>/', sorter: {path: 'trans>startDate', descending: true }}">
+               items="{path: 'trans>/', sorter: {path: 'trans>id', descending: true }}">
             <headerToolbar>
                 <OverflowToolbar>
                     <content>

@@ -73,7 +73,7 @@
       },
       "routes": [
         {
-          "pattern": "login",
+          "pattern": "",
           "name": "login",
           "target": "login"
         },
@@ -83,7 +83,7 @@
           "target": "transaction"
         },
         {
-          "pattern": "",
+          "pattern": "dashboard",
           "name": "dashboard",
           "target": "dashboard"
         },
@@ -116,6 +116,11 @@
           "pattern": "createSales",
           "name": "createSales",
           "target": "createSales"
+        },
+        {
+          "pattern": "listShop/:userName:",
+          "name": "listShop",
+          "target": "listShop"
         }
       ],
       "targets": {
@@ -180,6 +185,12 @@
         },
         "createSales": {
           "viewName": "CreateSalesItem",
+          "viewLevel": 2,
+          "controlId": "rootApp",
+          "controlAggregation": "pages"
+        },
+        "listShop": {
+          "viewName": "ListShop",
           "viewLevel": 2,
           "controlId": "rootApp",
           "controlAggregation": "pages"

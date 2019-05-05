@@ -82,6 +82,11 @@
 											<l:GridData indentXL="4" indentL="4" indentM="3" span="XL8 L6 M8 S12"/>
 										</layoutData>
 									</Input>
+									<!--<Input maxLength="100" value="{createTrans>/address}" placeholder="{i18n>STREET_NAME}">-->
+									<!--	<layoutData>-->
+									<!--		<l:GridData indentXL="4" indentL="4" indentM="3" span="XL8 L6 M8 S12"/>-->
+									<!--	</layoutData>-->
+									<!--</Input>-->
 								</f:fields>
 							</f:FormElement>
 						</f:formElements>
@@ -177,7 +182,8 @@
 							</f:FormElement>
 							<f:FormElement label="{i18n>liquidateAfter}">
 								<f:fields>
-									<Input textAlign="Right" maxLength="5" description="{i18n>overdue_days}" value="{createTrans>/liquidateAfter}"/>
+									<Input textAlign="Right" maxLength="5" description="{i18n>overdue_days}"
+									value="{createTrans>/liquidateAfter}"/>
 								</f:fields>
 							</f:FormElement>
 							<f:FormElement label="{i18n>NOTE}">

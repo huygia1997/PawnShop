@@ -47,9 +47,9 @@ sap.ui.define([
 		},
 		_onObjectMatched: function() {
 			this.bindCateConfigModel();
+			setInterval(this.getNotify(), 10000);
 		},
 		bindCateConfigModel: function() {
-
 			var accountModel = this.getModel("account");
 			if (!accountModel) {
 				this.getRouter().navTo("login", true);
@@ -91,6 +91,10 @@ sap.ui.define([
 			if (!this.checkLogin()) {
 				this.getRouter().navTo("login", true);
 			}
+			
+		},
+
+		getNotify: function() {
 			var notiModel = this.getModel("noti");
 			if (!notiModel) {
 				notiModel = new JSONModel();
@@ -102,7 +106,7 @@ sap.ui.define([
 				this.logout();
 				return;
 			}
-			var accountId = accountModel.getProperty("/").user.id;
+			var accountId = accountModel.getProperty("/user/id");
 			var notifications = models.getNotifications(accountId) || [];
 			//filter type 3 & 4
 			var validNoti = [];
@@ -113,6 +117,7 @@ sap.ui.define([
 			}
 			notiModel.setProperty("/", validNoti);
 		},
+
 		doNav: function(view, source) {
 			this.getRouter().navTo(view, true);
 			this.page.setSideExpanded(false);
@@ -126,6 +131,13 @@ sap.ui.define([
 		navToTransaction: function(oEvent) {
 			var source = oEvent.getSource();
 			this.doNav("transaction", source);
+		},
+		navToListShop: function() {
+			var oModelAccont = this.getModel("account");
+			var username = oModelAccont.getProperty("/user/username");
+			this.getRouter().navTo("listShop", {
+				userName: username
+			});
 		},
 		navToDashboard: function(oEvent) {
 			var source = oEvent.getSource();
@@ -264,7 +276,7 @@ sap.ui.define([
 				var bindingContext = item.getBindingContext("noti");
 				if (bindingContext) {
 					var type = bindingContext.getProperty("type");
-					if(type === 3) {
+					if (type === 3) {
 						this.getRouter().navTo("transaction");
 					}
 				}

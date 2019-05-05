@@ -19,7 +19,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon density="mdpi" src="www/images/logo.jpg" />
+    <icon density="mdpi" src="www/images/75a01ddf7d9398cdc182.jpg" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

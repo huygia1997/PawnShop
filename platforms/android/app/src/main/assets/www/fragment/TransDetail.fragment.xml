@@ -11,7 +11,6 @@
                 <f:layout>
                     <f:ResponsiveGridLayout
                             adjustLabelSpan="true"
-
                             emptySpanXL="0"
                             emptySpanL="0"
                             emptySpanM="0"
@@ -106,6 +105,7 @@
                                 <f:fields>
                                     <Button visible="{= ${transDetail>/transaction/status} === 2 }" type="Reject"
                                             press="onLiquidatePressed" text="{i18n>press_to_liquidate}"/>
+                                    <Button type="Default" press="onDownloadFile" text="{i18n>download_file}"/>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
@@ -312,7 +312,7 @@
                                 <Toolbar height="3rem">
                                     <content>
                                         <ToolbarSpacer/>
-                                        <Button type="Accept" press="onNextPaymentSubmit" icon="sap-icon://paid-leave"
+                                        <Button type="Accept" press="onOpenConfirmPasswordDialog" icon="sap-icon://paid-leave"
                                                 text="{i18n>btn_pay_deb}"/>
                                         <ToolbarSpacer width="0.75rem"/>
                                     </content>

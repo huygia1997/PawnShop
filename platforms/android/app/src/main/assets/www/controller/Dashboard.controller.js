@@ -8,9 +8,8 @@ sap.ui.define([
     return BaseController.extend("mortgage.pawnshop.controller.Dashboard", {
         onInit: function () {
             this.getRouter().getRoute("dashboard").attachMatched(this._onObjectMatched, this);
-
         },
-        _onObjectMatched: function (e) {
+        _onObjectMatched: function () {
             var logon = this.checkLogin();
             if (!logon) {
                 this.getRouter().navTo("login", true);

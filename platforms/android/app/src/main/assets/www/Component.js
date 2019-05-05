@@ -24,7 +24,7 @@ sap.ui.define([
             sap.ui.getCore().getConfiguration().setLanguage("vi");
             UIComponent.prototype.init.apply(this, arguments);
 
-            var lblHome = this.getModel("i18n").getResourceBundle().getText("navToHome");
+            // var lblHome = this.getModel("i18n").getResourceBundle().getText("navToHome");
             this.setModel(models.createGlobalModel(), "global");
             //init master data
             this.initCategoryData();

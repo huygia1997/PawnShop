@@ -33,14 +33,14 @@
                         <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
                     </layoutData>
                 </Button>
-                <!--<Button text="DEMO: Send Notifications"-->
-                <!--        type="Transparent"-->
-                <!--        press="onSendNoti"-->
-                <!--        tooltip="{i18n>errorButtonTooltip}">-->
-                <!--    <layoutData>-->
-                <!--        <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>-->
-                <!--    </layoutData>-->
-                <!--</Button>-->
+                <Button text="DEMO: Send Notifications"
+                        type="Transparent"
+                        press="onSendNoti"
+                        tooltip="{i18n>errorButtonTooltip}">
+                    <layoutData>
+                        <OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+                    </layoutData>
+                </Button>
                 <ResponsivePopover modal="false" showHeader="false" id="notiList" placement="VerticalPreferedBottom">
                     <beginButton>
                         <Button visible="{device>/system/phone}" type="Transparent" text="{i18n>close}"
@@ -62,6 +62,10 @@
             <tnt:SideNavigation expanded="true" id="sideNavigation">
                 <tnt:item>
                     <tnt:NavigationList>
+                    	<tnt:NavigationListItem
+                                icon="sap-icon://retail-store"
+                                select="navToListShop"
+                                text="{i18n>navListShop}"/>
                         <tnt:NavigationListItem
                                 icon="sap-icon://home"
                                 select="navToDashboard"

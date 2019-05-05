@@ -172,7 +172,6 @@ sap.ui.define([
          */
 
         login: function (username, password) {
-            var that = this;
             var logonData = {
                 username: username,
                 password: password

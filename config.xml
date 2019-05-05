@@ -18,7 +18,7 @@
     <allow-intent href="mailto:*"/>
     <allow-intent href="geo:*"/>
     <platform name="android">
-        <icon src="www/images/logo.jpg" density="mdpi" />
+        <icon src="www/images/75a01ddf7d9398cdc182.jpg" density="mdpi" />
         <allow-intent href="market:*"/>
     </platform>
     <platform name="ios">
