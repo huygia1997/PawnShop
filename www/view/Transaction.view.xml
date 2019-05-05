@@ -64,11 +64,11 @@
                 </fb:filterItems>
             </fb:FilterBar>
         </l:VerticalLayout>
-        <Table growing="true" growingThreshold="5" growingScrollToLoad="true" fixedLayout="false"
+        <Table growing="true" growingThreshold="10" growingScrollToLoad="true" fixedLayout="false"
                popinLayout="Block" alternateRowColors="true"
                inset="{= !${device>/support/touch}}"
                id="tblTransaction"
-               items="{trans>/}">
+               items="{path: 'trans>/', sorter: {path: 'trans>startDate', descending: true }}">
             <headerToolbar>
                 <OverflowToolbar>
                     <content>
